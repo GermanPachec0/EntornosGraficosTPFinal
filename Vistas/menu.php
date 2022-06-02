@@ -9,3 +9,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
 </head>
+<body style="background-color: grey;">
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark  nav-justified" >
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg" alt="Avatar Logo" style="width:100px;" class="rounded-pill" > 
+              </a>
+            </div>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </nav>
+          
