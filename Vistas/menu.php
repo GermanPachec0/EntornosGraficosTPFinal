@@ -17,7 +17,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg" alt="Avatar Logo" style="width:100px;" class="rounded-pill" > 
               </a>
             </div>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="ListadoUsuarios.php">Listado de Usuarios</a></li>
             <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
