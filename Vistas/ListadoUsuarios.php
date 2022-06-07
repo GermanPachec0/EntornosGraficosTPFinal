@@ -7,9 +7,9 @@
             <input type="text" class="form-control" placeholder="Ingresar Datos a buscar">
             <button class="btn btn-primary col-3" type="button">Buscar</button>
             <div class="col-2"></div>
-            <form action="Vistas/AltaModificacionUsuario.php" method="GET">
-        <a href="Vistas/AltaModificacionUsuario.php">ALTA USUARIO</a>
-          </form>
+            <form action="AltaModificacionUsuario.php" method="POST">
+            <input type="submit"  type="button" class="btn btn-primary" value="Agregar Usuario">
+            </form>
           </div>  
           <table class="table table-dark">
                 <thead>
@@ -25,7 +25,6 @@
                 </tr>
                 </thead>
                 <tbody>
-            
                 <tr>
                     <td>Alumno</td>
                     <td>48555</td>
@@ -34,10 +33,10 @@
                     <td>Franco</td>
                     <td>Lopez</td>
                     <td> 
-                    <button class="btn btn-success" type="button">Modificar</button>                    
+                    <a class="btn btn-success" href="ModificarUsuario.php">Modificar</a>
                     </td>
                     <td>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <a class="btn btn-danger" href="EliminarUsuario.php">Eliminar</a>
                     </td>
 
                 </tr>
