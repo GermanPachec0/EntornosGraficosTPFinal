@@ -16,6 +16,7 @@
                 <th>Estado</th>
                 <th>Motivo Bloqueo</th>
                 <th>Enlace Zoom</th>
+                <th>CUPO</th>
                 <th>Inscribirse</th>
               </tr>
             </thead>
@@ -28,6 +29,7 @@
                 <td>Pendiente</td>
                 <td>Licencia medica</td>
                 <td><a href="#">LINK Zoom</a></td>
+                <td>30</td>
                 <td> 
                   <button class="btn btn-success" type="button">Inscribirse</button>
                 </td>
