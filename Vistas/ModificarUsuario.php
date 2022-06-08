@@ -2,7 +2,7 @@
 <div class="mt-4 p-5 bg-primary text-white rounded">
             <h1>Modificar Usuario</h1>
             <p>Lorem ipsum...</p>
-          </div><br>
+</div><br>
 
     <form>
             <div class="form-group">
