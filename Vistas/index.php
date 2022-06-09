@@ -1,42 +1,33 @@
 <?php include("menu.php"); ?>
+           
+          </nav>
+          <div class="mt-4 p-5 bg-primary text-white rounded text-center">
+            <h1 >Menu Principal</h1>
+        
+  
+          </div>
+
           <div class="mt-4 p-5 bg-primary text-white rounded">
-            <h1>Lista de Consultas</h1>
-            <p>Lorem ipsum...</p>
-          </div><br>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Ingresar Datos a buscar">
-            <button class="btn btn-primary" type="button">Buscar</button>
-          </div>  
-          <table class="table table-dark">
-            <thead>
-              <tr>
-                <th>IDConsulta</th>
-                <th>Fecha Y Hora</th>
-                <th>Fecha Y Hora Alternativa</th>
-                <th>Estado</th>
-                <th>Motivo Bloqueo</th>
-                <th>Enlace Zoom</th>
-                <th>CUPO</th>
-                <th>Inscribirse</th>
-              </tr>
-            </thead>
-            <tbody>
-          
-              <tr>
-                <td>1</td>
-                <td>14/5/2022 00:00:00</td>
-                <td>14/5/2022 00:00:00</td>
-                <td>Pendiente</td>
-                <td>Licencia medica</td>
-                <td><a href="#">LINK Zoom</a></td>
-                <td>30</td>
-                <td> 
-                  <button class="btn btn-success" type="button">Inscribirse</button>
-                </td>
-              </tr>
-             
-            </tbody>
-          </table>
-          
+         
+            <p > 
+                <img src="https://scontent.fros2-1.fna.fbcdn.net/v/t1.6435-9/78249012_1477425022423103_9099013994693263360_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFtEEQTvg-cEtbtekiPSvCFVKX_AQwAaFdUpf8BDABoV2RLmOj0vR4LccsKsk9C7W_3IFu4ixr7eCquwwyoQQOm&_nc_ohc=K3PBuXhLdq4AX-uicmq&tn=k3vQth8wS4zx7TI_&_nc_ht=scontent.fros2-1.fna&oh=00_AT8wSlC6QE3CIxJ5adDvXnL_qWrFK8DPd_F8ZIIRctPdng&oe=62C52D32" 
+                style="width:200px" align="right" class="img-thumbnail">
+                 <h1>Información de uso del sitio</h1>
+                "Si usted necesita una cuenta para acceder a una consulta, vaya a la ssección de información y contactese vía email con un personal administrativo de la facultad."
+                 "En caso de olvidar la contraseña, contactarse con la facultad"
+                 Información de uso del sitio.
+                 "Si usted necesita una cuenta para acceder a una consulta, vaya a la ssección de información y contactese vía email con un personal administrativo de la facultad."
+                 "En caso de olvidar la contraseña, contactarse con la facultad"
+            </p>
+
+
+              
+
+
+
+          </div>
+          <br>
+         
 <?php include("footer.php") ?>
-</html>
+</html> 
+   

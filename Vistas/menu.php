@@ -15,13 +15,13 @@
     <div class="container ">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark  nav-justified" >
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="index.php">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg" alt="Avatar Logo" style="width:100px;" class="rounded-pill" > 
               </a>
             </div>
-            <li class="nav-item"><a class="nav-link" href="ListadoUsuarios.php">Listado de Usuarios</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="ConsultaAlumnos.php">Consultas alumnos</a></li>
+            <li class="nav-item"><a class="nav-link" href="consultasDocentes.php">Consultas Profesores</a></li>
+            <li class="nav-item"><a class="nav-link" href="Informacion.php">Informacion</a></li>
             <li class="nav-item"><a class="nav-link" href="Login.php">Iniciar Sesión</a></li>
           </nav>
           

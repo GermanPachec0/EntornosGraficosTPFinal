@@ -13,12 +13,12 @@
     <div class="container">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark  nav-justified" >
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="index.php">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg" alt="Avatar Logo" style="width:100px;" class="rounded-pill" > 
               </a>
             </div>
             <li class="nav-item"><a class="nav-link" href="Informacion.php">Informacion</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Cerrar sesion</a></li>
-            <li class="nav-item"><a class="nav-link" href="ConsultaAlumnos.php">Consultas</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Mis Consultas</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php">Cerrar sesion</a></li>
+            <li class="nav-item"><a class="nav-link" href="ConsultaAlumnos.php">Mis Consultas</a></li>
+           
           </nav>
