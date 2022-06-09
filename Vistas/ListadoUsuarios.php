@@ -1,7 +1,6 @@
 <?php include("menu.php"); ?>
     <div class="mt-4 p-5 bg-primary text-white rounded">
             <h1>Lista De Usuario</h1>
-            <p>Lorem ipsum...</p>
           </div><br>
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Ingresar Datos a buscar">
