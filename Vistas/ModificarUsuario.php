@@ -1,7 +1,7 @@
 <?php include("menu.php"); ?>
-<div class="mt-4 p-5 bg-primary text-white rounded">
+<div class="mt-4 p-5 bg-primary text-white rounded" style="text-align: center;">
             <h1>Modificar Usuario</h1>
-            <p>Lorem ipsum...</p>
+            
 </div><br>
 
     <form>

@@ -1,4 +1,4 @@
-<?php include ("menuAlumno.php"); ?>
+<?php include ("menu.php"); ?>
           <div class="mt-4 p-5 bg-primary text-white rounded">
             <h1>Lista de Consultas</h1>
           </div><br>

@@ -19,10 +19,10 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg" alt="Avatar Logo" style="width:100px;" class="rounded-pill" > 
               </a>
             </div>
-            <li class="nav-item"><a class="nav-link" href="ConsultaAlumnos.php">Consultas alumnos</a></li>
-            <li class="nav-item"><a class="nav-link" href="consultasDocentes.php">Consultas Profesores</a></li>
-            <li class="nav-item"><a class="nav-link" href="Informacion.php">Informacion</a></li>
-            <li class="nav-item"><a class="nav-link" href="Login.php">Iniciar Sesión</a></li>
+            <li class="nav-item"><a class="nav-link" href="ListadoConsultasVisitante.php">Información</a></li>
+            <li class="nav-item"><a class="nav-link" href="ModificarUsuario.php">Consultas</a></li>
+            <li class="nav-item"><a class="nav-link" href="CargaConsulta.php">Iniciar Sesión</a></li>
+
           </nav>
           
           
