@@ -1,4 +1,4 @@
-<?php include("menu.php"); ?>
+<?php include("Vistas/VistasGeneral/menu.php"); ?>
     <div class="mt-4 p-5 bg-primary text-white rounded " style="text-align: center;">
             <h1>Listado De Usuarios</h1>
           </div><br>
@@ -42,4 +42,4 @@
                 
                 </tbody>
           </table>
-<?php include("footer.php"); ?>
+          <?php include("Vistas/VistasGeneral/footer.php") ?>

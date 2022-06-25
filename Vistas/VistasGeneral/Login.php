@@ -1,4 +1,4 @@
-<?php include("menu.php"); ?>
+<?php include("Vistas/VistasGeneral/menu.php"); ?>
 <div class="mt-4 p-5 bg-primary text-white rounded text-center">
             <h1>Iniciar Sesión </h1>
 </div>
@@ -23,4 +23,4 @@
     </form>
 </div>
 <br>
-<?php include("footer.php"); ?>
+<?php include("Vistas/VistasGeneral/footer.php") ?>

@@ -1,4 +1,4 @@
-<?php include("menu.php"); ?>
+<?php include("Vistas/VistasGeneral/menu.php"); ?>
            
           </nav>
           <div class="mt-4 p-5 bg-primary text-white rounded text-center">
@@ -19,15 +19,9 @@
                  "Si usted necesita una cuenta para acceder a una consulta, vaya a la ssección de información y contactese vía email con un personal administrativo de la facultad."
                  "En caso de olvidar la contraseña, contactarse con la facultad"
             </p>
-
-
-              
-
-
-
           </div>
           <br>
          
-<?php include("footer.php") ?>
+<?php include("Vistas/VistasGeneral/footer.php") ?>
 </html> 
    

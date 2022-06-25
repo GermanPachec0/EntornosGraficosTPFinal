@@ -1,5 +1,5 @@
 
-  <?php include("menu.php"); ?>         
+<?php include("Vistas/VistasGeneral/menu.php"); ?>
           </nav>
           <div class="mt-4 p-5 bg-primary text-white rounded text-center">
             <h1 >Mis Consultas</h1>
@@ -47,6 +47,5 @@
 
           
           
-         
-          <?php include("footer.php") ?>
+          <?php include("Vistas/VistasGeneral/footer.php") ?>
           </html>
