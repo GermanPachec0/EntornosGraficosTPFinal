@@ -12,6 +12,9 @@
     <title>Document</title>
 </head>
 <body style="background-color: grey;">
+
+<?php $url ="http://".$_SERVER['HTTP_HOST']."/TPFINALENTORNOS" ?>
+
     <div class="container ">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark  nav-justified" >
             <div class="container-fluid">
@@ -19,9 +22,9 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg" alt="Avatar Logo" style="width:100px;" class="rounded-pill" > 
               </a>
             </div>
-            <li class="nav-item"><a class="nav-link" href="ListadoConsultasVisitante.php">Información</a></li>
-            <li class="nav-item"><a class="nav-link" href="ListadoConsultasVisitante.php">Consultas</a></li>
-            <li class="nav-item"><a class="nav-link" href="ListadoConsultasVisitante.php">Iniciar Sesión</a></li>
+            <li class="nav-item"><a class="nav-link" href="./ListadoConsultasVisitante.php">Información</a></li>
+            <li class="nav-item"><a class="nav-link" href="./ListadoConsultasVisitante.php">Consultas</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?php echo $url?>/EntornosGraficosTPFinal/Vistas/Login.php">Iniciar Sesión</a></li>
 
           </nav>
           

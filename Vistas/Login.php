@@ -5,7 +5,7 @@
 </div>
 <br>
 <div class="text-center d-flex justify-content-center form-floating bg-dark" >
-    <form class="form-signin col-8 " >
+    <form class="form-signin col-8 " action="Controlador/loginControlador.php" >
             <br>
             <div class="text-center mb-4">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg" alt="Avatar Logo" style="width:175px;"  class="img-thumbnail border border-dark"> 
