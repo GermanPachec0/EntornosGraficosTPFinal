@@ -5,17 +5,28 @@
 </div>
 <br>
 <div class="text-center d-flex justify-content-center form-floating bg-dark" >
-    <form class="form-signin col-8 " action="<?php echo $url?>/Controlador/loginControlador.php" >
+    <form class="form-signin col-8 " action="<?php echo $url?>/Vistas/loginControlador.php" method="POST" >
             <br>
+            
             <div class="text-center mb-4">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg" alt="Avatar Logo" style="width:175px;"  class="img-thumbnail border border-dark"> 
             </div>
+            <br>
+
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="Legajo">
+                <select class="form-select" aria-label="Default select example" name="tipousuario">
+                        <option selected>Tipo de Usuario</option>
+                        <option value="administrador">Administrador</option>
+                        <option value="alumno">Alumno</option>
+                        <option value="docente">Docente</option>
+                </select>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Legajo" name="legajo">
                 <label for="floatingInput">Legajo</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="contraseña">
                 <label for="floatingPassword">Contraseña</label>
             </div>
             <br>
@@ -24,4 +35,4 @@
     </form>
 </div>
 <br>
-<?php include("Vistas/VistasGeneral/footer.php") ?>
+<?php include("template/footer.php") ?>
