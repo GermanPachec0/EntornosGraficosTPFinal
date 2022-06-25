@@ -1,4 +1,4 @@
-<?php include("Vistas/VistasGeneral/menu.php"); ?>
+<?php include("Vistas/template/menu.php"); ?>
            
           </nav>
           <div class="mt-4 p-5 bg-primary text-white rounded text-center">
@@ -22,6 +22,6 @@
           </div>
           <br>
          
-<?php include("Vistas/VistasGeneral/footer.php") ?>
+<?php include("Vistas/template/footer.php") ?>
 </html> 
    

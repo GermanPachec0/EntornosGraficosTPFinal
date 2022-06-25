@@ -1,4 +1,4 @@
-<?php include('menufooter/menu.php'); ?>
+<?php include 'template/menu.php';?>
           <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align: center;">
             <h1>Lista de Consultas</h1>
           </div><br>
@@ -40,7 +40,7 @@
              
             </tbody>
           </table>
-          <?php include("Vistas/VistasGeneral/footer.php") ?>
+          <?php include("template/footer.php") ?>
     
 </body>
 </html>

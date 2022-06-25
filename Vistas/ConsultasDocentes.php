@@ -1,5 +1,6 @@
 
-<?php include("Vistas/VistasGeneral/menu.php"); ?>
+<?php include 'template/menu.php';?>
+
           </nav>
           <div class="mt-4 p-5 bg-primary text-white rounded text-center">
             <h1 >Mis Consultas</h1>
