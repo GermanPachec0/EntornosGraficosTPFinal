@@ -1,4 +1,3 @@
-<?php include 'template/menu.php';?>
 
 <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align: center;">
             <h1>Carga Consulta</h1>

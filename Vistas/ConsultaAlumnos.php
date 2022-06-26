@@ -1,51 +1,99 @@
-<?php include 'template/menu.php';?>
+<?php 
+  include("./usuario.php");
+  session_start();
+  $myUser= new Usuario();
+  $myUser = $_SESSION['usuario'];
+  if(isset($_SESSION['usuario']))
+  {
+    if($myUser -> getTipoUsuario() == "administrador")
+    {
+      include("template/menuAdmin.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "docente")
+    {
+    include("template/menuDocente.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "alumno")
+    {
+    include("template/menuAlumno.php");
+    }
+  } 
+  else{
+    include("template/menuVisitante.php");
+  }
+?>
 
-          <div class="mt-4 p-5 bg-primary text-white rounded">
-            <h1>Lista de Consultas</h1>
+
+<?php include('alumnoControlador.php');
+  $myResults = getMisConsultas();
+  $cant = mysqli_num_rows($myResults);
+
+  ?>
+    <div class="mt-4 p-5 bg-primary text-white rounded text-center">
+            <h1>Mis Consultas</h1>
           </div><br>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Ingresar Datos a buscar">
-            <button class="btn btn-primary" type="button">Buscar</button>
-          </div>  
-          <table class="table table-dark">
+         
+       
+          <?php
+          if($cant>0)
+          {
+          ?>
+          
+             <table class="table table-dark">
             <thead>
               <tr>
                 <th>IDConsulta</th>
-                <th>Fecha Y Hora</th>
-                <th>Fecha Y Hora Alternativa</th>
+                <th>Docente</th>
+                <th>Materia</th>
+                <th>Fecha y Hora</th>
+                <th>Fecha y Hora alternativa</th>
                 <th>Estado</th>
                 <th>Motivo Bloqueo</th>
-                <th>Enlace Zoom</th>
-                <th>Inscribirse</th>
+                <th>Zoom</th>
+                <th>Cupo</th>
+                <th>Anular Inscripcion</th>
               </tr>
             </thead>
             <tbody>
-          
-              <tr>
-                <td>1</td>
-                <td>14/5/2022 00:00:00</td>
-                <td>14/5/2022 00:00:00</td>
-                <td>Pendiente</td>
-                <td>Licencia medica</td>
-                <td><a href="#">LINK Zoom</a></td>
-                <td> 
-                  <button class="btn btn-success" type="button">Inscribirse</button>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>15/5/2022 00:00:00</td>
-                <td>15/5/2022 00:00:00</td>
-                <td>Activo</td>
-                <td></td>
-                <td> Presencial </td>
-                <td> <button class="btn btn-success" type="button">Anular inscripcion</button>
-                </td>
-              </tr>
+            <?php
+            while($fila = mysqli_fetch_array($myResults))
+            {
+            ?>
+
+                <tr>
+                  <td><?php echo $fila[0] ?></td>
+                  <td><?php echo $fila[1]." ".$fila[2]  ?></td>
+                  <td><?php echo $fila[3]?></td>
+                  <td><?php echo $fila[4]?></td>
+                  <td><?php echo $fila[5]?></td>
+                  <td><?php echo $fila[6]?></td>
+                  <td><?php echo $fila[7]?></td>
+                  <td><?php echo $fila[8]?></td>
+                  <td><?php echo $fila[9]?></td>
+                  <form action="alumnoControlador.php" method="POST">
+                  <input name="id" value="<?php echo $fila['10']?>" hidden>
+                  <input name="idConsulta" value="<?php echo $fila['0']?>" hidden>
+                  <td><input type="submit" class="btn btn-danger" value="Anular Inscripción" onclick="confirm('¿Desea Anular Inscripcion?')"></td>
+                  </form>
+                </tr>
+                <?php 
+              }
+                ?>
+
+          <?php
+          }
+        else
+        {
+          echo "<div class='alert alert-info'>
+          <strong>Informacion</strong> Usted no se ha incripto a ninguna consulta.
+        </div>";
+        }
+          ?>
+      
              
             </tbody>
           </table>
-          <?php include("Vistas/VistasGeneral/footer.php") ?>
+          <?php include("./template/footer.php") ?>
     
 </body>
 </html>

@@ -34,10 +34,10 @@
             return  $this -> nombre;
         }
         function setApellido($apellido){
-            $this -> nombre  = $apellido;
+            $this -> apellido  = $apellido;
         }
         function getApellido(){
-            return  $this -> nombre;
+            return  $this -> apellido;
         }
         function setTipoUsuario($tipoUsuario){
             $this -> tipoUsuario  = $tipoUsuario;

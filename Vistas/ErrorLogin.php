@@ -1,4 +1,3 @@
-<?php include 'menu.php';?>
 
 <div class="mt-4 p-5 bg-danger text-white rounded text-center">
             <h1>Error: No se encontró Usuario registrado</h1>

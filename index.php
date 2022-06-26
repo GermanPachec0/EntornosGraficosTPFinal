@@ -1,4 +1,28 @@
-<?php include("Vistas/template/menu.php"); ?>
+<?php 
+  include("Vistas/usuario.php");
+  session_start();
+  if(isset($_SESSION['usuario']))
+  {
+      $myUser= new Usuario();
+      $myUser = $_SESSION['usuario'];
+    if($myUser -> getTipoUsuario() == "administrador")
+    {
+      include("Vistas/template/menuAdmin.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "docente")
+    {
+    include("Vistas/template/menuDocente.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "alumno")
+    {
+    include("Vistas/template/menuAlumno.php");
+    }
+  } 
+  else{
+    include("Vistas/template/menuVisitante.php");
+  }
+?>
+
            
           </nav>
           <div class="mt-4 p-5 bg-primary text-white rounded text-center">

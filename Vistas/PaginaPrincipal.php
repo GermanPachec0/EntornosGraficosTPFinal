@@ -1,4 +1,3 @@
-<?php include 'template/menu.php';?>
 
            
           </nav>
@@ -29,6 +28,6 @@
           </div>
           <br>
          
-          <?php include("Vistas/VistasGeneral/footer.php") ?>
+          <?php include("template/footer.php") ?>
 </html> 
    

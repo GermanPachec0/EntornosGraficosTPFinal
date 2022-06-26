@@ -1,26 +1,23 @@
 <?php
-  
-
-
     $tipousuario =  $_POST['tipousuario'];
 
     if($tipousuario== "alumno")
     {
-        echo "BUSCAR ALUMNO";
+        
         validarUsuario($tipousuario);
     }
     else if($tipousuario == "profesor")
     {
-        echo " Buscar profesor";
+     
         validarUsuario($tipousuario);
     }
     else if($tipousuario == "administrador")
     {
-            echo "Buscar administrador";
+            
             validarUsuario($tipousuario);
     }
     else {
-        echo "Ingresar tipo de usuario";
+     
         validarUsuario($tipousuario);
     }
 

@@ -1,6 +1,4 @@
-<?php include 'template/menu.php';?>
-
-           
+      
           </nav>
           <div class="mt-4 p-5 bg-primary text-white rounded text-center">
             <h1 >Reprogramar Consulta</h1>
@@ -26,6 +24,6 @@
     </form>
              <br> 
          
-             <?php include("Vistas/VistasGeneral/footer.php") ?>
+             <?php include("Vistas/template/footer.php") ?>
 </html> 
    

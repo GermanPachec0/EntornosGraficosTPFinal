@@ -46,4 +46,4 @@
             <a class="btn btn-danger" href="ListadoUsuarios.php">Cancelar</a>
     </form>
 <br>
-<?php include("Vistas/VistasGeneral/footer.php") ?>
+<?php include("Vistas/template/footer.php") ?>

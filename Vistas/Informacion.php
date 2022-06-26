@@ -1,4 +1,27 @@
-<?php include 'template/menu.php';?>
+<?php 
+  include("./usuario.php");
+  session_start();
+  if(isset($_SESSION['usuario']))
+  {
+      $myUser= new Usuario();
+      $myUser = $_SESSION['usuario'];
+    if($myUser -> getTipoUsuario() == "administrador")
+    {
+      include("template/menuAdmin.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "docente")
+    {
+    include("template/menuDocente.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "alumno")
+    {
+    include("template/menuAlumno.php");
+    }
+  } 
+  else{
+    include("template/menuVisitante.php");
+  }
+?>
 
           <div class="mt-4 p-5 bg-primary text-white rounded">
             <h1>Informacion acerca de la Facultad</h1>
@@ -34,7 +57,7 @@
           
           <button type="button" class="btn btn-primary"> Enviar </button> <br> <br>
       
-          <?php include("Vistas/VistasGeneral/footer.php") ?>
+          <?php include("./template/footer.php") ?>
        
 
 
