@@ -1,4 +1,27 @@
-<?php include 'template/menu.php';?>
+<?php 
+  include("./usuario.php");
+  session_start();
+  $myUser= new Usuario();
+  $myUser = $_SESSION['usuario'];
+  if(isset($_SESSION['usuario']))
+  {
+    if($myUser -> getTipoUsuario() == "administrador")
+    {
+      include("template/menuAdmin.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "docente")
+    {
+    include("template/menuDocente.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "alumno")
+    {
+    include("template/menuAlumno.php");
+    }
+  } 
+  else{
+    include("template/menuVisitante.php");
+  }
+?>
           <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align: center;">
             <h1>Lista de Consultas</h1>
           </div><br>
@@ -12,11 +35,11 @@
             <thead>
               <tr>
                 <th>IDConsulta</th>
-                <th>Fecha Y Hora</th>
-                <th>Fecha Y Hora Alternativa</th>
-                <th>Estado</th>
-                <th>Profesor</th>
+                <th>Docente</th>
                 <th>Materia</th>
+                <th>Fecha y Hora</th>
+                <th>Fecha y Hora Reprogramada</th>
+                <th>Estado</th>
                 <th>Motivo Bloqueo</th>
                 <th>Cupo Disponible</th>
                 <th>Inscribirse</th>
