@@ -4,7 +4,7 @@
             
 </div><br>
 
-    <form>
+    <form action="actualizar_usuario.php" method="POST">
         
             <div class="form-group">
                 <label for="exampleInputEmail1">Tipo De Usuario</label>

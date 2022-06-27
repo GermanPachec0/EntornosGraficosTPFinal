@@ -1,5 +1,5 @@
 <?php
-include("./conexion.php");
+$consultas = consulta::obtener();
 
 ?>
           
@@ -24,23 +24,33 @@ include("./conexion.php");
                 <th>Fecha y Hora</th>
                 <th>Estado</th>
                 <th>Motivo Bloqueo</th>
+                <th>cupo</th>
                 <th>Modificar</th>
                 <th>Eliminar</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Adriann L. </td>
-                <td>Entornos Graficos</td>
-                <td>15/5/2022</td>
-                <td>Bloqueado</td>
-                <td>Licencia medica</td>
-                <td><button class="btn btn-success">Modificar</button>
-                </td>
-                <td><button class="btn btn-danger">Eliminar</button>
-                </td>
-              </tr> 
+            <?php foreach ($consultas as $consulta) { ?>
+                    <tr>
+                        <td><?php echo $consulta["idMateria"] ?></td>
+                        <td><?php echo $consulta["legajoDocente"] ?></td>
+                        <td><?php echo $consulta["fechayhoraAlt"] ?></td>
+                        <td><?php echo $consulta["estado"] ?></td>
+                        <td><?php echo $consulta["motivoBloqueo"] ?></td>
+                        <td><?php echo $consulta["cupo"] ?></td>
+                        
+                        <td>
+                            <a href="editar_consulta.php?id=<?php echo $consulta["idMateria"] ?>" class="btn btn-warning">
+                                Editar
+                            </a>
+                        </td>
+                        <td>
+                            <a href="eliminar_consulta.php?id=<?php echo $consulta["idMateria"] ?>" class="btn btn-danger">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
             </tbody>
           </table>
           <?php include("Vistas/VistasGeneral/footer.php") ?>
