@@ -1,20 +1,26 @@
 <?php
+include_once "conexion.php";
 $consultas = consulta::obtener();
 
 ?>
           
-          
-          <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align:center ;">
+  <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align:center ;">
             <h1>Lista de Consultas</h1>
-          </div><br>
+          </div>
+          
+          <br>
+          
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Ingresar Datos a buscar">
             <button class="btn btn-primary col-3" type="button">Buscar</button>
             <div class="col-2"></div>
-            <form action="AltaModificacionUsuario.php" method="POST">
-            <input type="submit"  type="button" class="btn btn-primary" value="Agregar Consulta">
-            </form>
-          </div>  
+
+
+            <a href="formulario_registro_estudiante.php" class="btn btn-info my-2">Nuevo</a>
+
+          </div> 
+          
+          
           <table class="table table-dark ">
             <thead>
               <tr>
@@ -57,3 +63,4 @@ $consultas = consulta::obtener();
     
 </body>
 </html>
+
