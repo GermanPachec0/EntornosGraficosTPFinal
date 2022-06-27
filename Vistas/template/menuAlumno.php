@@ -26,7 +26,7 @@
             <li class="nav-item"><a class="nav-link" href="<?php echo $url?>/Vistas/Informacion.php">Informacion</a></li>
             <li class="nav-item"><a class="nav-link" href="<?php echo $url?>/Vistas/ConsultaAlumnos.php">Mis Consultas</a></li>
             <li class="nav-item"><a class="nav-link" href="<?php echo $url?>/Vistas/ListadoConsultasVisitante.php">Consultas</a></li>
-            <li class="nav-item"><a onclick="confirm('¿Desea Cerrar Sesión?')" class="nav-link" href="<?php echo $url?>/Vistas/Login.php">Cerrar Sesion</a></li>
+            <li class="nav-item"><a onclick="confirm('¿Desea Cerrar Sesión?')" class="nav-link" href="<?php echo $url?>/Vistas/cerrarsesion.php">Cerrar Sesion</a></li>
             
           </nav>
           
