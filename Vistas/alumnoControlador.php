@@ -1,6 +1,8 @@
 <?php
     include('conexion.php');
-        
+
+
+
     if(isset($_POST["idConsulta"]) && isset($_POST["id"]))
     {   
         $idCons = $_POST["idConsulta"];
@@ -15,10 +17,22 @@
 
     }
 
- 
+    function getConsultas()
+    {
+        include('conexion.php');       
+
+        $vSql = "SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.cupo,d.legajo,m.idMateria
+        FROM  consulta c
+        inner join docente d
+        on d.legajo = c.legajoDocente
+        inner join materia m
+        on m.idMateria = c.idMateria;";
+          $vResultado = mysqli_query($link,$vSql)  or die (mysqli_error($link));;
+          mysqli_close($link);
+          return $vResultado;
 
 
-
+    }
     function getMisConsultas()
     {
         
@@ -41,6 +55,7 @@
         return $vResultado;
 
     }      
+
 
 
 
