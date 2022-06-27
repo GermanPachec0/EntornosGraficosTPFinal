@@ -27,7 +27,7 @@ $sql = "UPDATE administrador SET legajo = '$legajo', tipoUsuario = '$tipoUsuario
 $resultado = mysqli_query($link, $sql);
 }
 
-echo ("El ". $tipoUsuario. " se ha modificado con exito !");
+header ("Location: ListadoUsuarios.php");
 
 
 

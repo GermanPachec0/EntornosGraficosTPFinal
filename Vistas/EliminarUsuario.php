@@ -18,7 +18,6 @@ if ($tipoUsuario == 'administrador'){
     $resultado = mysqli_query($link, $sql);
 }
 
-echo ("El ". $tipoUsuario. " se ha borrado con exito ! ");
-"<a href='ListadoUsuario.php'> VOLVER AL LISTADO DE USUARIOS </a>"
+header("Location: ListadoUsuarios.php ");
 
 ?>
