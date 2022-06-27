@@ -53,17 +53,23 @@ include ("conexion.php"); ?>
                 <tbody>
                 <tr>
                     <td><?php echo ($fila['tipoUsuario']); ?></td>
-                    <td><?php echo ($fila['legajo']); ?></td>
+                    <td ><?php echo ($fila['legajo']); ?>  </td>
                     <td><?php echo ($fila['email']); ?></td>
                     <td><?php echo ($fila['contraseña']); ?></td>
                     <td><?php echo ($fila['nombre']); ?></td>
                     <td><?php echo ($fila['apellido']); ?></td>
                     <td> 
-                     
-                    <a class="btn btn-success" href="ModificarUsuario.php">Modificar</a>
+                  
+                    <form action="ModificarUsuario.php" method="POST">
+                    <input name="legajo" value="<?php echo $fila['legajo'] ?>" hidden>
+                    <input type="submit" class = "btn btn-success" value="Modificar">
+                    </form>
                     </td>
                     <td>
-                    <a class="btn btn-danger" href="EliminarUsuario.php">Eliminar</a>
+                    <form action="EliminarUsuario.php" method="POST">
+                    <input name="legajo" value="<?php echo $fila['legajo'] ?>" hidden>
+                    <input type="submit" class = "btn btn-danger" value="Eliminar">
+                    </form>
                     </td>
 
                 </tr>

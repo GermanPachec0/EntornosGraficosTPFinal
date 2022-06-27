@@ -5,7 +5,7 @@
             <p></p>
           </div><br>
 
-    <form action="<?php echo $url?>/Controlador/AltaUsuarioControlador.php" method="POST">
+    <form action="<?php echo $url?> AltaUsuarioControlador.php" method="POST">
             <div class="form-group" >
                 <label >Tipo De Usuario</label>
                 <select class="form-select" aria-label="Default select example" name="tipoUsuario">
