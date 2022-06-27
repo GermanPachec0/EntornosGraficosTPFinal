@@ -62,6 +62,11 @@ include ("conexion.php"); ?>
                   
                     <form action="ModificarUsuario.php" method="POST">
                     <input name="legajo" value="<?php echo $fila['legajo'] ?>" hidden>
+                    <input name="tipoUsuario" value="<?php echo $fila['tipoUsuario'] ?>" hidden>
+                    <input name="email" value="<?php echo $fila['email'] ?>" hidden>
+                    <input name="contrasena" value="<?php echo $fila['contrasena'] ?>" hidden>
+                    <input name="nombre" value="<?php echo $fila['nombre'] ?>" hidden>
+                    <input name="apellido" value="<?php echo $fila['apellido'] ?>" hidden>
                     <input type="submit" class = "btn btn-success" value="Modificar">
                     </form>
                     </td>
