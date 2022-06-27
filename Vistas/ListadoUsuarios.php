@@ -1,5 +1,5 @@
-<?php include 'template/menuAdmin.php';
-include ("conexion.php"); ?>
+<?php include 'template/menuAdmin.php'; ?>
+<?php include ("conexion.php");?>
 
 
     <div class="mt-4 p-5 bg-primary text-white rounded " style="text-align: center;">

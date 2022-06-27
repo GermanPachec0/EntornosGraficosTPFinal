@@ -1,24 +1,14 @@
-<?php include 'template/menuAdmin.php';
-
-
-$legajo = $_POST['legajo'];
-$tipoUsuario = $_POST['tipoUsuario'];
-
-?>
+<?php include 'template/menuAdmin.php';?>
+<?php $legajo = $_POST['legajo'];
+$tipoUsuario = $_POST['tipoUsuario'];?>
 
 
 <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align: center;">
             <h1>Modificar Usuario</h1>
             
 </div><br>
-
-
-    <form action="<?php echo $url?> ModificarUsuarioControlador.php" method="POST">
-
-
-
-    <div class="form-group" >
-
+ <form action="ModificarUsuarioControlador.php" method="POST">
+ <div class="form-group" >
     <label >Tipo De Usuario</label>
     <select class="form-select" aria-label="Default select example" name="tipoUsuario">  
                         <option selected ><?php echo($tipoUsuario)?> </option>
