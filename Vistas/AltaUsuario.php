@@ -1,49 +1,48 @@
-<?php include 'template/menu.php';?>
+<?php include ("template/menuAdmin.php");?>
 
 <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align: center;">
             <h1>Alta Usuarios</h1>
             <p></p>
           </div><br>
 
-    <form>
-            <div class="form-group" action="<?php echo $url?>/Controlador/AltaUsuarioControlador.php">
-                <label for="exampleInputEmail1">Tipo De Usuario</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <form action="<?php echo $url?>/Controlador/AltaUsuarioControlador.php" method="POST">
+            <div class="form-group" >
+                <label >Tipo De Usuario</label>
+                <select class="form-select" aria-label="Default select example" name="tipoUsuario">
+                        <option selected>Tipo de Usuario</option>
+                        <option value="administrador" >Administrador</option>
+                        <option value="alumno" >Alumno</option>
+                        <option value="docente"  >Docente</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Legajo</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <label >Legajo</label>
+                <input type="text" class="form-control" name="legajo" >
             </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Tipo de Usuario a dar de alta</label>
-                    <select id="cars">
-                    <option value="volvo">Profesor</option>
-                    <option value="saab">Alumno</option>
-                    </select>
-            </div>
+            
 
             <div class="form-group">
                 <label for="email">Email </label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <input type="email" class="form-control" name="email">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Contraseña</label>
-                <input type="email" class="form-control" id="Contraseña" aria-describedby="emailHelp">
+                <label>Contraseña</label>
+                <input type="password" class="form-control" name="contraseña" >
             </div>
             
             <div class="form-group">
-                <label for="exampleInputEmail1">Nombre</label>
-                <input type="email" class="form-control" id="Contraseña" aria-describedby="emailHelp">
+                <label >Nombre</label>
+                <input type="text" class="form-control" name="nombre">
             </div>
             
             <div class="form-group">
-                <label for="exampleInputEmail1">Apellido</label>
-                <input type="email" class="form-control" id="apellido" aria-describedby="emailHelp">
+                <label >Apellido</label>
+                <input type="text" class="form-control" name="apellido" >
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Aceptar</button>
             <a class="btn btn-danger" href="ListadoUsuarios.php">Cancelar</a>
     </form>
 <br>
-<?php include("Vistas/template/footer.php") ?>
+<?php include("template/footer.php") ?>

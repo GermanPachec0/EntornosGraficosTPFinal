@@ -1,15 +1,39 @@
-  
+<?php include 'template/menuAdmin.php';
+include ("conexion.php"); ?>
+
+
     <div class="mt-4 p-5 bg-primary text-white rounded " style="text-align: center;">
             <h1>Listado De Usuarios</h1>
           </div><br>
+
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Ingresar Datos a buscar">
             <button class="btn btn-primary col-3" type="button">Buscar</button>
             <div class="col-2"></div>
-            <form action="AltaModificacionUsuario.php" method="POST">
+            <form action="AltaUsuario.php" method="POST">
             <input type="submit"  type="button" class="btn btn-primary" value="Agregar Usuario">
             </form>
+
+            <?php
+            $sql = "SELECT * FROM alumno ";
+            $resultado = mysqli_query($link, $sql);
+            $total_registros = mysqli_num_rows($resultado);
+
+            
+            $sql2 = "SELECT * FROM docente ";
+            $resultado2 = mysqli_query($link, $sql2);
+            $total_registros = mysqli_num_rows($resultado2);
+
+            $sql3 = "SELECT * FROM administrador ";
+            $resultado3 = mysqli_query($link, $sql3);
+            $total_registros = mysqli_num_rows($resultado3);
+
+        
+
+
+            ?>
           </div>  
+
           <table class="table table-dark">
                 <thead>
                 <tr>
@@ -23,14 +47,41 @@
                     <th>Eliminar</th>
                 </tr>
                 </thead>
+                <?php
+                while ($fila = mysqli_fetch_array($resultado)){
+                  ?>
                 <tbody>
                 <tr>
-                    <td>Alumno</td>
-                    <td>48555</td>
-                    <td>FrancoL@gmail.com</td>
-                    <td>fralp1231456</td>
-                    <td>Franco</td>
-                    <td>Lopez</td>
+                    <td><?php echo ($fila['tipoUsuario']); ?></td>
+                    <td><?php echo ($fila['legajo']); ?></td>
+                    <td><?php echo ($fila['email']); ?></td>
+                    <td><?php echo ($fila['contraseña']); ?></td>
+                    <td><?php echo ($fila['nombre']); ?></td>
+                    <td><?php echo ($fila['apellido']); ?></td>
+                    <td> 
+                     
+                    <a class="btn btn-success" href="ModificarUsuario.php">Modificar</a>
+                    </td>
+                    <td>
+                    <a class="btn btn-danger" href="EliminarUsuario.php">Eliminar</a>
+                    </td>
+
+                </tr>
+                
+                </tbody>
+                
+<?php
+                }
+                while ($fila = mysqli_fetch_array($resultado2)){
+                  ?>
+                <tbody>
+                <tr>
+                    <td><?php echo ($fila['tipoUsuario']); ?></td>
+                    <td><?php echo ($fila['legajo']); ?></td>
+                    <td><?php echo ($fila['email']); ?></td>
+                    <td><?php echo ($fila['contraseña']); ?></td>
+                    <td><?php echo ($fila['nombre']); ?></td>
+                    <td><?php echo ($fila['apellido']); ?></td>
                     <td> 
                     <a class="btn btn-success" href="ModificarUsuario.php">Modificar</a>
                     </td>
@@ -41,5 +92,38 @@
                 </tr>
                 
                 </tbody>
+                
+<?php
+                }
+                while ($fila = mysqli_fetch_array($resultado3)){
+                  ?>
+                <tbody>
+                <tr>
+                    <td><?php echo ($fila['tipoUsuario']); ?></td>
+                    <td><?php echo ($fila['legajo']); ?></td>
+                    <td><?php echo ($fila['email']); ?></td>
+                    <td><?php echo ($fila['contraseña']); ?></td>
+                    <td><?php echo ($fila['nombre']); ?></td>
+                    <td><?php echo ($fila['apellido']); ?></td>
+                    <td> 
+                  
+                    <a class="btn btn-success" href="ModificarUsuario.php">Modificar</a>
+                    </td>
+                    <td>
+                    <a class="btn btn-danger" href="EliminarUsuario.php">Eliminar</a>
+                    </td>
+
+                </tr>
+                
+                </tbody>
+                
+<?php
+                }
+                
+       
+?>
+
+              
+
           </table>
-          <?php include("Vistas/template/footer.php") ?>
+          <?php include('template/footer.php') ?>
