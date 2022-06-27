@@ -1,7 +1,10 @@
 <?php include 'template/menuAdmin.php';
 
 
-$legajo = $_POST['legajo'];?>
+$legajo = $_POST['legajo'];
+$tipoUsuario = $_POST['tipoUsuario'];
+
+?>
 
 
 <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align: center;">
@@ -18,7 +21,7 @@ $legajo = $_POST['legajo'];?>
 
     <label >Tipo De Usuario</label>
     <select class="form-select" aria-label="Default select example" name="tipoUsuario">  
-                        <option value= "<?php echo($tipoUsuario)?>"selected >Tipo de Usuario</option>
+                        <option selected ><?php echo($tipoUsuario)?> </option>
                         <option value="administrador" >Administrador</option>
                         <option value="alumno" >Alumno</option>
                         <option value="docente"  >Docente</option>
