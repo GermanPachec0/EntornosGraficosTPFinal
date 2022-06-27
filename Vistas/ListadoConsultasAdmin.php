@@ -1,4 +1,9 @@
+<?php
+include("./conexion.php");
 
+?>
+          
+          
           <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align:center ;">
             <h1>Lista de Consultas</h1>
           </div><br>
@@ -26,7 +31,7 @@
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Adrian L. </td>
+                <td>Adriann L. </td>
                 <td>Entornos Graficos</td>
                 <td>15/5/2022</td>
                 <td>Bloqueado</td>
