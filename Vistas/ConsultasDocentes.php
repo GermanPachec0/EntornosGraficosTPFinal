@@ -1,3 +1,27 @@
+<?php 
+  include("./usuario.php");
+  session_start();
+  if(isset($_SESSION['usuario']))
+  {
+      $myUser= new Usuario();
+      $myUser = $_SESSION['usuario'];
+    if($myUser -> getTipoUsuario() == "administrador")
+    {
+      include("template/menuAdmin.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "docente")
+    {
+    include("template/menuDocente.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "alumno")
+    {
+    include("template/menuAlumno.php");
+    }
+  } 
+  else{
+    include("template/menuVisitante.php");
+  }
+?>
 
           </nav>
           <div class="mt-4 p-5 bg-primary text-white rounded text-center">
@@ -46,5 +70,5 @@
 
           
           
-          <?php include("Vistas/VistasGeneral/footer.php") ?>
+          <?php include("footer.php") ?>
           </html>
