@@ -35,6 +35,29 @@ $estado = $_POST['estado'];
 $motivoBloqueo = $_POST['motivo'];
 $enlaceZoom = $_POST['enlaceZoom'];
 $cupo = $_POST['cupo'];
+$idDocente = $_POST['idDocente'];
+$profesorYid = $_POST['profesorYid'];
+?>
+
+<?php 
+function getDocente(){
+    include ("conexion.php");
+    $vSql= " SELECT * 
+    from docente d";
+     $vResultado= mysqli_query($link,$vSql)  or die (mysqli_error($link));
+     return $vResultado;
+    }
+
+    function getMateria(){
+        include ("conexion.php");
+        $vSql= " SELECT * 
+        from materia m";
+         $vResultado= mysqli_query($link,$vSql)  or die (mysqli_error($link));
+         return $vResultado;
+        }
+    $misMaterias=getMateria();
+    $misDocentes=getDocente();
+
 
 ?>
 
@@ -45,47 +68,75 @@ $cupo = $_POST['cupo'];
 </div><br>
 
 
-    <form action="<?php echo $url?> ModificarConsultaControlador.php" method="POST">
+    <form action="ModificarConsultaControlador.php" method="POST">
 
- 
+    
     <div class="form-group" >
-         
-            </div>
-            <div class="form-group">
-                <label>IDconsulta</label>
-                <input type="text" class="form-control" name="IDconsulta" value="<?php echo($IDconsulta);?>" >
-            </div>
-          
+                <label >Profesor</label>
+                <select class="form-select" aria-label="Default select example" name="docente" required>
+               
+                <option selected><?php echo($profesorYid);?></option>
+               
+            <?php
+                while($fila = mysqli_fetch_array($misDocentes))
+            {
+            ?>
+                <option value="<?php echo $fila['legajo']?>" ><?php echo $fila['nombre'] ." ".$fila['apellido'] ." legajo: ".$fila['legajo']?></option>
+            <?php
+
+            }?>
+             </select>
+
+
+
+
+    </div>
+    <br>
+     <div class="form-group" >
+                <label >Materia</label>
+                <select class="form-select" aria-label="Default select example" name="materia" required>
+                
+                <option selected><?php echo($materia);?></option>
+               
+            <?php
+                while($fila = mysqli_fetch_array($misMaterias))
+            {
+            ?>
+                <option value="<?php echo $fila['idMateria']?>"  ><?php echo $fila['nombre'] ?></option>
+            <?php
+
+            }?>
+             </select>
+
+
+
+
+    </div>
 
             <div class="form-group">
-                <label >Nombre Y apellido docente</label>
-                <input type="text" class="form-control" name="docente" value="<?php echo($docente);?>">
-            </div>
-
-            <div class="form-group">
-                <label>fechayhora</label>
-                <input type="date" class="form-control" name="fechayhora" value="<?php echo($fechayhora);?>">
+                <label>Fecha y hora</label>
+                <input type="datetime-local" class="form-control" name="fechayhora" value="<?php echo($fechayhora);?>">
             </div>
             
             
             <div class="form-group" >
-                <label >estado</label>
-                <select class="form-select" aria-label="Default select example" name="tipoUsuario">
-                        <option selected>estado</option>
-                        <option value="disponible" >disponible</option>
-                        <option value="bloqueado" >bloqueado</option>
+                <label >Estado</label>
+                <select class="form-select" aria-label="Default select example" name="tipoUsuario" >
+                        <option selected><?php echo($estado);?></option>
+                        <option value="disponible" >Disponible</option>
+                        <option value="bloqueado" >Bloqueado</option>
                         
                 </select>
             </div>
 
 
             <div class="form-group">
-                <label for=>motivoBloqueo</label>
-                <input type="text" class="form-control" name="motivoBloqueo" value="<?php echo($motivoBloqueo);?>">
+                <label for=>Enlace Zoom</label>
+                <input type="text" class="form-control" name="enlaceZoom" value="<?php echo($enlaceZoom);?>">
             </div>
 
             <div class="form-group">
-                <label for=>cupo</label>
+                <label for=>Cupo</label>
                 <input type="text" class="form-control" name="cupo" value="<?php echo($cupo);?>">
             </div>
 

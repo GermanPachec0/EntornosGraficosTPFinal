@@ -52,7 +52,7 @@
   {
      
       include ("conexion.php");
-      $vSql = "SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.enlaceZoom,c.cupo 
+      $vSql = "SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.enlaceZoom,c.cupo,c.legajoDocente
       from consulta c
       inner join materia m
     on m.idMateria = c.idMateria
@@ -65,7 +65,7 @@
   }
 function getConsultas(){
   include ("conexion.php");
-  $vSql= " SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.enlaceZoom,c.cupo 
+  $vSql= " SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.enlaceZoom,c.cupo,c.legajoDocente
   from consulta c
     inner join materia m
     on m.idMateria = c.idMateria
@@ -132,6 +132,7 @@ function getConsultas(){
                   <td><?php echo $fila[8]?></td>
                   <td><?php echo $fila[9]?></td>
                   
+                  
                   <form action="Modificar_consulta.php" method="POST">
                       <input name="IDconsulta" value="<?php echo $fila['0']?>" hidden>
                       <input name="estado" value="<?php echo $fila['6']?>" hidden>
@@ -141,9 +142,10 @@ function getConsultas(){
                       <input name="fechayhoraAlt" value="<?php echo $fila['5']?>" hidden>
                       <input name="motivo" value="<?php echo $fila['7']?>" hidden>
                       <input name="docente" value="<?php echo$fila[1]." ".$fila[2]?>" hidden>
-                     
+                      <input name="idDocente" value="<?php echo $fila['10']?>" hidden>
                       <input name="materia" value="<?php echo $fila['3']?>" hidden>
-                      <td><input type="submit" class="btn btn-success" value="Modificar" onclick="confirm('¿Desea modificar?')"></td>
+                      <input name="profesorYid" value="<?php echo$fila[1]." ".$fila[2]." legajo: ".$fila['10']?>" hidden>
+                      <td><input type="submit" class="btn btn-success" value="Modificar" ></td>
                     </form>
 
                     <td>
