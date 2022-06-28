@@ -27,32 +27,38 @@
 
 <?php 
   
-  if(!isset($_POST['submit']))
+  if(isset($_POST['buscatodos']))
   {
-    if(isset($_POST['materia']))
-    {
-    $myResults =  buscarPorMateria($_POST['materia']);
-    }
-    else{
-      $myResults = getConsultas();
-    }
+ 
+    $myResults = getConsultas() ;
+    
+    
+  
   }
-  else{
-
-    $myResults = getConsultas();
+   else if (isset($_POST['buscabloqueado'])){
+    $myResults =  buscarbloqueado();
+  
+  }
+  else
+  {
+ 
+    $myResults = getConsultas() ;
+    
+    
+  
   }
     
-  function buscarPorMateria($materia)
+  function buscarbloqueado()
   {
      
       include ("conexion.php");
-      $vSql = "SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.cupo,m.idMateria 
-      FROM consulta c
-      inner join materia m 
-      on m.idMateria = c.idMateria
-      inner join docente d
-      on d.legajo = c.legajoDocente
-      where m.nombre LIKE '%".$materia."%';";
+      $vSql = "SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.enlaceZoom,c.cupo 
+      from consulta c
+      inner join materia m
+    on m.idMateria = c.idMateria
+    inner join docente d
+    on d.legajo = c.legajoDocente
+      where c.estado = 'bloqueado'";
       $vResultado= mysqli_query($link,$vSql)  or die (mysqli_error($link));
    
       return $vResultado;
@@ -75,10 +81,16 @@ function getConsultas(){
           </div><br>
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="POST">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="materia" placeholder="Ingresar Materia a buscar">
-            <input type="submit" class="btn btn-primary col-3" value="Buscar">
+            
+            <input type="submit" class="btn btn-primary col-3" name="buscabloqueado" value="Buscar consultas bloqueadas">
+            <input type="submit" class="btn btn-primary col-3" name="buscatodos" value="Listar todas las consultas">
+         
             <div class="col-2"></div>
-            <td><input type="submit" class="btn btn-success" value="Agregar consulta" ></td>
+            </form>
+
+            <form action="Agregar_consulta.php" method="POST">
+            <input type="submit"  type="button" class="btn btn-primary" value="Agregar Consulta">
+            </form>
           </div>  
           
         
@@ -137,8 +149,17 @@ function getConsultas(){
                     <td>
 
                     <form action="EliminarConsulta.php" method="POST">
-                    <input name="IDconsulta" value="<?php echo $fila['0'] ?>" hidden>
-                    <input type="submit" class = "btn btn-danger" value="Eliminar">
+                    <input name="IDconsulta" value="<?php echo $fila['0']?>" hidden>
+                      <input name="estado" value="<?php echo $fila['6']?>" hidden>
+                      <input name="cupo" value="<?php echo $fila['9']?>" hidden>
+                      <input name="enlaceZoom" value="<?php echo $fila['8']?>" hidden>
+                      <input name="fechayhora" value="<?php echo $fila['4']?>" hidden>
+                      <input name="fechayhoraAlt" value="<?php echo $fila['5']?>" hidden>
+                      <input name="motivo" value="<?php echo $fila['7']?>" hidden>
+                      <input name="docente" value="<?php echo$fila[1]." ".$fila[2]?>" hidden>
+                     
+                      <input name="materia" value="<?php echo $fila['3']?>" hidden>
+                      <input type="submit" class = "btn btn-danger" value="Eliminar">
                     </form>
                     </td>
 

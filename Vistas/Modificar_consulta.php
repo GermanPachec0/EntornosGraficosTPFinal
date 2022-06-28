@@ -1,3 +1,28 @@
+<?php 
+  include("./usuario.php");
+  session_start();
+  if(isset($_SESSION['usuario']))
+  {
+      $myUser= new Usuario();
+      $myUser = $_SESSION['usuario'];
+    if($myUser -> getTipoUsuario() == "administrador")
+    {
+      include("template/menuAdmin.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "docente")
+    {
+    include("template/menuDocente.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "alumno")
+    {
+    include("template/menuAlumno.php");
+    }
+  } 
+  else{
+    include("template/menuVisitante.php");
+  }
+?>
+
 <?php include 'template/menuAdmin.php';
 
 
@@ -7,7 +32,7 @@ $materia = $_POST['materia'];
 $fechayhora = $_POST['fechayhora'];
 $fechayhoraAlt = $_POST['fechayhoraAlt'];
 $estado = $_POST['estado'];
-$motivo = $_POST['motivo'];
+$motivoBloqueo = $_POST['motivo'];
 $enlaceZoom = $_POST['enlaceZoom'];
 $cupo = $_POST['cupo'];
 
@@ -42,19 +67,21 @@ $cupo = $_POST['cupo'];
                 <input type="date" class="form-control" name="fechayhora" value="<?php echo($fechayhora);?>">
             </div>
             
-            <div class="form-group">
-                <label for=>fechayhoraAlt</label>
-                <input type="date" class="form-control" name="fechayhoraAlt" value="<?php echo($fechayhoraAlt);?>">
-            </div>
             
-            <div class="form-group">
-                <label for=>estado</label>
-                <input type="text" class="form-control" name="estado" value="<?php echo($estado);?>" >
+            <div class="form-group" >
+                <label >estado</label>
+                <select class="form-select" aria-label="Default select example" name="tipoUsuario">
+                        <option selected>estado</option>
+                        <option value="disponible" >disponible</option>
+                        <option value="bloqueado" >bloqueado</option>
+                        
+                </select>
             </div>
+
 
             <div class="form-group">
                 <label for=>motivoBloqueo</label>
-                <input type="text" class="form-control" name="motivo" value="<?php echo($motivo);?>">
+                <input type="text" class="form-control" name="motivoBloqueo" value="<?php echo($motivoBloqueo);?>">
             </div>
 
             <div class="form-group">
