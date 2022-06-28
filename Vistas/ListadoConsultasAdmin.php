@@ -52,7 +52,7 @@
   {
      
       include ("conexion.php");
-      $vSql = "SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.enlaceZoom,c.cupo,c.legajoDocente
+      $vSql = "SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.enlaceZoom,c.cupo,c.legajoDocente,m.idMateria
       from consulta c
       inner join materia m
     on m.idMateria = c.idMateria
@@ -65,7 +65,7 @@
   }
 function getConsultas(){
   include ("conexion.php");
-  $vSql= " SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.enlaceZoom,c.cupo,c.legajoDocente
+  $vSql= " SELECT c.idConsulta,d.nombre,d.apellido,m.nombre,c.fechayhora,c.fechayhoraAlt,c.estado,c.motivoBloqueo,c.enlaceZoom,c.cupo,c.legajoDocente,m.idMateria
   from consulta c
     inner join materia m
     on m.idMateria = c.idMateria
@@ -144,6 +144,7 @@ function getConsultas(){
                       <input name="docente" value="<?php echo$fila[1]." ".$fila[2]?>" hidden>
                       <input name="idDocente" value="<?php echo $fila['10']?>" hidden>
                       <input name="materia" value="<?php echo $fila['3']?>" hidden>
+                      <input name="idMateria" value="<?php echo $fila['11']?>" hidden>
                       <input name="profesorYid" value="<?php echo$fila[1]." ".$fila[2]." legajo: ".$fila['10']?>" hidden>
                       <td><input type="submit" class="btn btn-success" value="Modificar" ></td>
                     </form>

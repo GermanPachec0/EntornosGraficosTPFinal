@@ -12,10 +12,11 @@ $estado = $_POST['estado'];
 $motivoBloqueo = $_POST['motivoBloqueo'];
 $enlaceZoom = $_POST['enlaceZoom'];
 $cupo = $_POST['cupo'];
+$idMateria = $_POST['idMateria'];
 
-$sql12 = "UPDATE consulta SET legajoDocente ='$idDocente' , idMateria = '$materia', 
+$sql12 = "UPDATE consulta SET legajoDocente ='$idDocente' , idMateria = '$idMateria', 
 fechayhora = '$fechayhora', estado = '$estado', enlaceZoom = '$enlaceZoom', cupo = '$cupo'
- WHERE (idConsulta = '$IDconsulta') and (legajoDocente = '$idDocente') and (idMateria = '$materia');";
+ WHERE (idConsulta = '$IDconsulta') and (legajoDocente = '$idDocente') and (idMateria = '$idMateria');";
 mysqli_query($link, $sql12) or die(mysqli_error($link));
 
 

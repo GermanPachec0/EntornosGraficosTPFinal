@@ -37,6 +37,7 @@ $enlaceZoom = $_POST['enlaceZoom'];
 $cupo = $_POST['cupo'];
 $idDocente = $_POST['idDocente'];
 $profesorYid = $_POST['profesorYid'];
+$idMateria = $_POST['idMateria'];
 ?>
 
 <?php 
