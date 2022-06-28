@@ -23,7 +23,7 @@
   }
 ?>
 
-<?php include 'template/menuAdmin.php';
+<?php ;
 
 
 $IDconsulta = $_POST['IDconsulta'];
@@ -122,7 +122,7 @@ function getDocente(){
             
             <div class="form-group" >
                 <label >Estado</label>
-                <select class="form-select" aria-label="Default select example" name="tipoUsuario" >
+                <select class="form-select" aria-label="Default select example" name="estado" >
                         <option selected><?php echo($estado);?></option>
                         <option value="disponible" >Disponible</option>
                         <option value="bloqueado" >Bloqueado</option>
