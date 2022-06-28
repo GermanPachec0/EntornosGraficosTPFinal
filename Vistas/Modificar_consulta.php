@@ -58,8 +58,7 @@ function getDocente(){
         }
     $misMaterias=getMateria();
     $misDocentes=getDocente();
-
-
+    
 ?>
 
 
@@ -74,9 +73,9 @@ function getDocente(){
     
     <div class="form-group" >
                 <label >Profesor</label>
-                <select class="form-select" aria-label="Default select example" name="docente" required>
+                <select class="form-select" aria-label="Default select example" name="idDocente2" required>
                
-                <option selected><?php echo($profesorYid);?></option>
+                <option selected value="<?php echo($idDocente);?>"><?php echo($profesorYid) ;?></option>
                
             <?php
                 while($fila = mysqli_fetch_array($misDocentes))
@@ -95,9 +94,9 @@ function getDocente(){
     <br>
      <div class="form-group" >
                 <label >Materia</label>
-                <select class="form-select" aria-label="Default select example" name="materia" required>
+                <select class="form-select" aria-label="Default select example" name="idMateria2" required>
                 
-                <option selected><?php echo($materia);?></option>
+                <option selected value="<?php echo($idMateria);?>"><?php echo($materia);?></option>
                
             <?php
                 while($fila = mysqli_fetch_array($misMaterias))
@@ -109,14 +108,27 @@ function getDocente(){
             }?>
              </select>
 
-
-
+             
 
     </div>
+            <div class="form-group">
+                
+                <input type="text" class="form-control" name="idMateria" value="<?php echo($idMateria);?>" hidden>
+            </div>
+
+            <div class="form-group">
+                
+                <input type="text" class="form-control" name="idDocente" value="<?php echo($idDocente);?>" hidden>
+            </div>
+
+            <div class="form-group">
+                
+                <input type="text" class="form-control" name="IDconsulta" value="<?php echo($IDconsulta);?>" hidden>
+            </div>
 
             <div class="form-group">
                 <label>Fecha y hora</label>
-                <input type="datetime-local" class="form-control" name="fechayhora" value="<?php echo($fechayhora);?>">
+                <input type="datetime" class="form-control" name="fechayhora" value="<?php echo($fechayhora);?>">
             </div>
             
             

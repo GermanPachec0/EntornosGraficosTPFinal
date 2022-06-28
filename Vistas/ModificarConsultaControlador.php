@@ -1,19 +1,38 @@
 <?php
 
 include("conexion.php");
+
+if(isset($_POST['idDocente2']))
+{
+    $idDocente = $_POST['idDocente2'];
+}
+else{
+
+    $idDocente = $_POST['idDocente'];
+}
+
+
+
+if (isset($_POST['idMateria2']))
+{
+   $idMateria = $_POST['idMateria2'];
+}
+else{
+
+    $idMateria = $_POST['idMateria'];
+}
+
+echo($idDocente);
 $IDconsulta = $_POST['IDconsulta'];
-$docente = $_POST['docente'];
-$materia= $_POST['materia'];
+
 $fechayhora = $_POST['fechayhora'];
 $estado = $_POST['estado'];
 $enlaceZoom = $_POST['enlaceZoom'];
 $cupo = $_POST['cupo'];
-$idMateria = $_POST['idMateria'];
 
-
-$sql1 = "UPDATE consulta SET legajoDocente ='$docente ' , idMateria = '$idMateria', 
+$sql1 = "UPDATE consulta SET legajoDocente ='$idDocente' , idMateria = '$idMateria', 
 fechayhora = '$fechayhora', estado = '$estado', enlaceZoom = '$enlaceZoom', cupo = '$cupo'
-WHERE  (idConsulta = '$IDconsulta') (legajoDocente = '$docente') and (idMateria = '$idMateria');";
+WHERE  (idConsulta = '$IDconsulta') ;";
 
 mysqli_query($link, $sql1) or die(mysqli_error($link));
 mysqli_close($link);
