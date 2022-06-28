@@ -38,7 +38,7 @@
             <br>
 
             <div class="form-floating mb-3">
-                <select class="form-select" aria-label="Default select example" name="tipousuario">
+                <select class="form-select" aria-label="Default select example" name="tipousuario" required>
                         <option selected>Tipo de Usuario</option>
                         <option value="administrador">Administrador</option>
                         <option value="alumno">Alumno</option>
