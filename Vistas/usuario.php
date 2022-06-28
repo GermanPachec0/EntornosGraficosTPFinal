@@ -46,10 +46,6 @@
             return  $this -> tipoUsuario;
         }
     
-   
-
-
-    
 }
 
     
