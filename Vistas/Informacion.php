@@ -29,22 +29,25 @@
         <br>
           <div class="row">
           <div class="col-7">
-              <form>
+              <form action="enviarEmail.php" method="POST">
               <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="Email">
+                  <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email" required>
                   <label for="floatingInput">Email</label>
               </div>
               <div class="form-floating">
-                  <input type="tipo" class="form-control" id="floatingPassword" placeholder="Consulta">
-                  <label for="floatingPassword">Tipo Consulta</label>
+                  <input type="text" class="form-control" id="floatingPassword" placeholder="Asunto" name="asunto" required>
+                  <label for="floatingPassword">Asunto</label>
               </div>
               <br>
               <div class="form-floating">
-                  <textarea style="height: 300px;" type="tipo" class="form-control" id="floatingPassword" placeholder="Escrite Tu Consulta"> </textarea>
+                  <textarea style="height: 300px;" type="text" class="form-control" id="floatingPassword" placeholder="Escrite Tu Consulta" name="consulta" required> </textarea>
                   <label for="floatingPassword">Escribir Consulta</label>
               </div>
 
               <br>
+              <input  type="submit" class="btn btn-primary" value="Enviar"> 
+               <br> <br>
+
               </form>
             </div>
           <div class="col-5">
@@ -55,7 +58,6 @@
       
           
           
-          <button type="button" class="btn btn-primary"> Enviar </button> <br> <br>
       
           <?php include("./template/footer.php") ?>
        

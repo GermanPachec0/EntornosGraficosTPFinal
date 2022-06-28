@@ -1,4 +1,21 @@
-<?php include ("template/menuAdmin.php");?>
+<?php 
+ include("usuario.php");
+  session_start();
+
+    if(isset($_SESSION['usuario']))
+    {
+     if($_SESSION['usuario'] -> getTipoUsuario() == "administrador")
+        {
+        include("template/menuAdmin.php");
+        }
+      else{
+        header("Location: AccesoDenegado.php");
+      }
+      
+    }else{
+      header("Location: AccesoDenegado.php");
+  }
+?>
 
 <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align: center;">
             <h1>Alta Usuarios</h1>
