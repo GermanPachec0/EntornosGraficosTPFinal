@@ -46,28 +46,6 @@
             return  $this -> tipoUsuario;
         }
     
-        function guardar()
-        {
-            global $mysqli;
-            $sentencia = $mysqli->prepare("INSERT INTO alumno ( legajo,email,contrasenia;,nombre,apellido,tipoUsuario)
-                    VALUES
-                    (?, ?,?, ?, ?,?)");
-            $sentencia->bind_param("ss", $this->legajo,$this->email,$this->contrasenia,$this->nombre,$this->apellido,$this->tipoUsuario);
-            $sentencia->execute();
-        }    
-        
-        public function actualizar()
-        {
-            global $mysqli;
-            $sentencia = $mysqli->prepare("update alumno set legajo= ?,,email= ?,contrasenia= ?,nombre= ?,apellido= ?,tipoUsuario= ?");
-            $sentencia->bind_param("ssi", $this->legajo,$this->email,$this->contrasenia,$this->nombre,$this->apellido,$this->tipoUsuario);
-            $sentencia->execute();
-        }
-    
-        
-
-
-    
 }
 
     

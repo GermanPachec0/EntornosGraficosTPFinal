@@ -1,29 +1,56 @@
-      
+<?php 
+  include("./usuario.php");
+  session_start();
+  if(isset($_SESSION['usuario']))
+  {
+      $myUser= new Usuario();
+      $myUser = $_SESSION['usuario'];
+    if($myUser -> getTipoUsuario() == "administrador")
+    {
+      include("template/menuAdmin.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "docente")
+    {
+    include("template/menuDocente.php");
+    }
+    else if ($myUser -> getTipoUsuario() == "alumno")
+    {
+    include("template/menuAlumno.php");
+    }
+  } 
+  else{
+    include("template/menuVisitante.php");
+  }
+
+?>
+
+
           </nav>
           <div class="mt-4 p-5 bg-primary text-white rounded text-center">
             <h1 >Reprogramar Consulta</h1>
-      
+
           </div>
 
-         
-         
-      <form>
+  
+ <?php 
+
+  ?>
+      <form action="reprogramarConsultaControlador.php" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Motivo de bloqueo</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" name="motivo" class="form-control" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">fecha</label>
-                <input type="date" class="form-control" id="email" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1">Fecha</label>
+                <input type="datetime-local" name="fecha" class="form-control"  aria-describedby="emailHelp">
             </div>
-
-           
+        
             <br>
-            <button type="submit" class="btn btn-primary">Aceptar</button>
-            <a class="btn btn-danger" href="ListadoUsuarios.php">Cancelar</a>
+            <input type="submit" class="btn btn-primary col-3" value="Aceptar">
+            <a class="btn btn-danger" href="ConsultasDocentes.php">Cancelar</a>
     </form>
-             <br> 
+            
          
-             <?php include("Vistas/template/footer.php") ?>
+             <?php include("footer.php") ?>
 </html> 
    
