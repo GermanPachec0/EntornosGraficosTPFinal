@@ -93,7 +93,8 @@ function getMisConsultas()
                   <form action="profesorControlador.php" method="POST">
                   <input name="id" value="<?php echo $fila['10']?>" hidden>
                   <input name="idConsulta" value="<?php echo $fila['0']?>" hidden>
-                  <td><input type="submit" class="btn btn-danger" value="Bloquear Consulta" onclick="confirm('¿Bloquear Consulta?')"></td>
+                  <td><input type="submit" class="btn btn-danger" value="Bloquear Consulta"></td>
+               
                   </form>
                 </tr>
                 <?php 
@@ -110,11 +111,12 @@ function getMisConsultas()
         }
           ?>
       
-             
+             <br>
             </tbody>
+            
+        
           </table>
 
-          
-          
+         
           <?php include("footer.php") ?>
           </html>

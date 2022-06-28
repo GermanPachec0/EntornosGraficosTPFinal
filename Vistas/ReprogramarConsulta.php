@@ -38,11 +38,11 @@
       <form action="reprogramarConsultaControlador.php" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Motivo de bloqueo</label>
-                <input type="text" name="motivo" class="form-control" aria-describedby="emailHelp">
+                <input type="text" name="motivo" class="form-control" aria-describedby="emailHelp" required>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Fecha</label>
-                <input type="datetime-local" name="fecha" class="form-control"  aria-describedby="emailHelp">
+                <input type="datetime-local" name="fecha" class="form-control"  aria-describedby="emailHelp" required>
             </div>
         
             <br>

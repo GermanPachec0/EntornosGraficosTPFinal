@@ -46,11 +46,11 @@
                 </select>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Legajo" name="legajo">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Legajo" name="legajo" required>
                 <label for="floatingInput">Legajo</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="contraseña">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" name="contraseña" required>
                 <label for="floatingPassword">Contraseña</label>
             </div>
             <br>
