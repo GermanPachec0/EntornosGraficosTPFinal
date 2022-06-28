@@ -1,5 +1,5 @@
-<?php include 'template/menuAdmin.php';
-include ("conexion.php"); ?>
+<?php include 'template/menuAdmin.php'; ?>
+<?php include ("conexion.php");?>
 
 
     <div class="mt-4 p-5 bg-primary text-white rounded " style="text-align: center;">
@@ -64,7 +64,7 @@ include ("conexion.php"); ?>
                     <input name="legajo" value="<?php echo $fila['legajo'] ?>" hidden>
                     <input name="tipoUsuario" value="<?php echo $fila['tipoUsuario'] ?>" hidden>
                     <input name="email" value="<?php echo $fila['email'] ?>" hidden>
-                    <input name="contrasena" value="<?php echo $fila['contrasena'] ?>" hidden>
+                    <input name="contrasena" value="<?php echo $fila['contraseña'] ?>" hidden>
                     <input name="nombre" value="<?php echo $fila['nombre'] ?>" hidden>
                     <input name="apellido" value="<?php echo $fila['apellido'] ?>" hidden>
                     <input type="submit" class = "btn btn-success" value="Modificar">
@@ -73,6 +73,11 @@ include ("conexion.php"); ?>
                     <td>
                     <form action="EliminarUsuario.php" method="POST">
                     <input name="legajo" value="<?php echo $fila['legajo'] ?>" hidden>
+                    <input name="tipoUsuario" value="<?php echo $fila['tipoUsuario'] ?>" hidden>
+                    <input name="email" value="<?php echo $fila['email'] ?>" hidden>
+                    <input name="contrasena" value="<?php echo $fila['contraseña'] ?>" hidden>
+                    <input name="nombre" value="<?php echo $fila['nombre'] ?>" hidden>
+                    <input name="apellido" value="<?php echo $fila['apellido'] ?>" hidden>
                     <input type="submit" class = "btn btn-danger" value="Eliminar">
                     </form>
                     </td>
@@ -94,10 +99,26 @@ include ("conexion.php"); ?>
                     <td><?php echo ($fila['nombre']); ?></td>
                     <td><?php echo ($fila['apellido']); ?></td>
                     <td> 
-                    <a class="btn btn-success" href="ModificarUsuario.php">Modificar</a>
+                    <form action="ModificarUsuario.php" method="POST">
+                    <input name="legajo" value="<?php echo $fila['legajo'] ?>" hidden>
+                    <input name="tipoUsuario" value="<?php echo $fila['tipoUsuario'] ?>" hidden>
+                    <input name="email" value="<?php echo $fila['email'] ?>" hidden>
+                    <input name="contrasena" value="<?php echo $fila['contraseña'] ?>" hidden>
+                    <input name="nombre" value="<?php echo $fila['nombre'] ?>" hidden>
+                    <input name="apellido" value="<?php echo $fila['apellido'] ?>" hidden>
+                    <input type="submit" class = "btn btn-success" value="Modificar">
+                    </form>
                     </td>
                     <td>
-                    <a class="btn btn-danger" href="EliminarUsuario.php">Eliminar</a>
+                    <form action="EliminarUsuario.php" method="POST">
+                    <input name="legajo" value="<?php echo $fila['legajo'] ?>" hidden>
+                    <input name="tipoUsuario" value="<?php echo $fila['tipoUsuario'] ?>" hidden>
+                    <input name="email" value="<?php echo $fila['email'] ?>" hidden>
+                    <input name="contrasena" value="<?php echo $fila['contraseña'] ?>" hidden>
+                    <input name="nombre" value="<?php echo $fila['nombre'] ?>" hidden>
+                    <input name="apellido" value="<?php echo $fila['apellido'] ?>" hidden>
+                    <input type="submit" class = "btn btn-danger" value="Eliminar">
+                    </form>
                     </td>
 
                 </tr>
@@ -118,10 +139,25 @@ include ("conexion.php"); ?>
                     <td><?php echo ($fila['apellido']); ?></td>
                     <td> 
                   
-                    <a class="btn btn-success" href="ModificarUsuario.php">Modificar</a>
-                    </td>
+                    <form action="ModificarUsuario.php" method="POST">
+                    <input name="legajo" value="<?php echo $fila['legajo'] ?>" hidden>
+                    <input name="tipoUsuario" value="<?php echo $fila['tipoUsuario'] ?>" hidden>
+                    <input name="email" value="<?php echo $fila['email'] ?>" hidden>
+                    <input name="contrasena" value="<?php echo $fila['contraseña'] ?>" hidden>
+                    <input name="nombre" value="<?php echo $fila['nombre'] ?>" hidden>
+                    <input name="apellido" value="<?php echo $fila['apellido'] ?>" hidden>
+                    <input type="submit" class = "btn btn-success" value="Modificar">
+                    </form>
                     <td>
-                    <a class="btn btn-danger" href="EliminarUsuario.php">Eliminar</a>
+                    <form action="EliminarUsuario.php" method="POST">
+                    <input name="legajo" value="<?php echo $fila['legajo'] ?>" hidden>
+                    <input name="tipoUsuario" value="<?php echo $fila['tipoUsuario'] ?>" hidden>
+                    <input name="email" value="<?php echo $fila['email'] ?>" hidden>
+                    <input name="contrasena" value="<?php echo $fila['contraseña'] ?>" hidden>
+                    <input name="nombre" value="<?php echo $fila['nombre'] ?>" hidden>
+                    <input name="apellido" value="<?php echo $fila['apellido'] ?>" hidden>
+                    <input type="submit" class = "btn btn-danger" value="Eliminar">
+                    </form>
                     </td>
 
                 </tr>
