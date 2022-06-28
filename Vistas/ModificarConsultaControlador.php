@@ -2,26 +2,40 @@
 
 include("conexion.php");
 
+if(isset($_POST['idDocente2']))
+{
+    $idDocente = $_POST['idDocente2'];
+}
+else{
+
+    $idDocente = $_POST['idDocente'];
+}
+
+
+
+if (isset($_POST['idMateria2']))
+{
+   $idMateria = $_POST['idMateria2'];
+}
+else{
+
+    $idMateria = $_POST['idMateria'];
+}
+
+echo($idDocente);
 $IDconsulta = $_POST['IDconsulta'];
-$docente = $_POST['docente'];
-$materia = $_POST['materia'];
+
 $fechayhora = $_POST['fechayhora'];
-$fechayhoraAlt = $_POST['fechayhoraAlt'];
 $estado = $_POST['estado'];
-$motivoBloqueo = $_POST['motivoBloqueo'];
 $enlaceZoom = $_POST['enlaceZoom'];
 $cupo = $_POST['cupo'];
 
+$sql1 = "UPDATE consulta SET legajoDocente ='$idDocente' , idMateria = '$idMateria', 
+fechayhora = '$fechayhora', estado = '$estado', enlaceZoom = '$enlaceZoom', cupo = '$cupo'
+WHERE  (idConsulta = '$IDconsulta') ;";
 
-
-$sql2 = "UPDATE consulta SET  IDconsulta = '$IDconsulta', docente = '$docente', materia = '$materia', fechayhora= '$fechayhora'
- ,fechayhoraAlt= '$fechayhoraAlt' ,estado= '$estado' ,motivoBloqueo= '$motivoBloqueo' ,enlaceZoom= '$enlaceZoom',cupo= '$cupo'
-        WHERE IDconsulta = '$IDconsulta'; ";
-        mysqli_query($link, $sql2) or die(mysqli_error($link));
-
-        echo ("El alumno se modifico con exito !");
-
-
+mysqli_query($link, $sql1) or die(mysqli_error($link));
 mysqli_close($link);
+header ("Location: ListadoConsultasAdmin.php");
 
 ?>

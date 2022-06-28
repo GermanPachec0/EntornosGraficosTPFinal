@@ -90,18 +90,18 @@ function getDocente(){
 
 
             <div class="form-group">
-                <label>fechayhora</label>
+                <label>Fecha y hora</label>
                 <input type="datetime-local" class="form-control" name="fechayhora" value="" required>
             </div>
           
             
             
             <div class="form-group" >
-                <label >estado</label>
+                <label >Estado</label>
                 <select class="form-select" aria-label="Default select example" name="estado" required>
                         <option selected>estado</option>
-                        <option value="disponible" >disponible</option>
-                        <option value="bloqueado" >bloqueado</option>
+                        <option value="disponible" >Disponible</option>
+                        <option value="bloqueado" >Bloqueado</option>
                         
                 </select>
             </div>
@@ -114,7 +114,7 @@ function getDocente(){
 
 
             <div class="form-group">
-                <label for=>cupo</label>
+                <label for=>Cupo</label>
                 <input type="text" class="form-control" name="cupo" value="" required>
             </div>
 
