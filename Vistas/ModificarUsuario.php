@@ -28,38 +28,36 @@ $tipoUsuario = $_POST['tipoUsuario'];?>
  <form action="ModificarUsuarioControlador.php" method="POST">
  <div class="form-group" >
     <label >Tipo De Usuario</label>
-    <select class="form-select" aria-label="Default select example" name="tipoUsuario">  
+    <select class="form-select" aria-label="Default select example" name="tipoUsuario" readonly required>  
                         <option selected ><?php echo($tipoUsuario)?> </option>
-                        <option value="administrador" >Administrador</option>
-                        <option value="alumno" >Alumno</option>
-                        <option value="docente"  >Docente</option>
+                      
                 </select>
          
             </div>
             <div class="form-group">
                 <label>Legajo</label>
-                <input type="text" class="form-control" name="legajo" value="<?php echo($legajo);?>" >
+                <input type="text onlyread" class="form-control" name="legajo" value="<?php echo($legajo);?>" readonly required>
             </div>
           
 
             <div class="form-group">
                 <label >Email </label>
-                <input type="email" class="form-control" name="email" >
+                <input type="email" class="form-control" name="email" value="<?php echo $_POST['email'];?>" required>
             </div>
 
             <div class="form-group">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" name="contraseña">
+                <input type="password" class="form-control" name="contraseña" value="<?php echo $_POST['contrasena'];?>"required>
             </div>
             
             <div class="form-group">
                 <label for=>Nombre</label>
-                <input type="text" class="form-control" name="nombre">
+                <input type="text" class="form-control" name="nombre" value="<?php echo $_POST['nombre'];?>" required>
             </div>
             
             <div class="form-group">
                 <label for=>Apellido</label>
-                <input type="text" class="form-control" name="apellido" >
+                <input type="text" class="form-control" name="apellido" value="<?php echo $_POST['apellido'];?>" required>
             </div>
             <br>
             <input type="submit" class="btn btn-primary" value="Aceptar">

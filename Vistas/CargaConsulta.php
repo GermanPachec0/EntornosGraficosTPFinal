@@ -25,21 +25,21 @@
     <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Docente</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Legajo</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
             </div>
 
             <div class="form-group">
                 <label for="email">Materia </label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
             </div>
 
             <div class="form-group">
                 <label for="exampleInputEmail1">Fecha y Hora</label>
-                <input type="email" class="form-control" id="Contraseña" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="Contraseña" aria-describedby="emailHelp" required>
             </div>
            
     </form>

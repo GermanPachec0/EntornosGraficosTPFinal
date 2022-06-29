@@ -47,9 +47,6 @@
             $resultado3 = mysqli_query($link, $sql3);
             $total_registros = mysqli_num_rows($resultado3);
 
-        
-
-
             ?>
           </div>  
 
