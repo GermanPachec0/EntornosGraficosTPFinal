@@ -9,7 +9,7 @@
     <link href="estilos/signin.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <title>Document</title>
+    <title>Gestion consultas</title>
 </head>
 <body style="background-color: grey;">
 
