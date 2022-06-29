@@ -11,8 +11,9 @@ $sql = "INSERT INTO consulta (legajoDocente,idMateria, fechayhora, estado, enlac
  VALUES ('$docente', '$materia', '$fechayhora', '$estado', '$enlaceZoom', '$cupo');";
 
 mysqli_query($link, $sql) or die (mysqli_error($link));
-mysqli_close($link);
+
 header("Location: ListadoConsultasAdmin.php");
+mysqli_close($link);
 ?>
 
 

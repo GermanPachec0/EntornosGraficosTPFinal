@@ -9,7 +9,7 @@ $IDconsulta = $_POST['IDconsulta'];
     $resultado = mysqli_query($link, $sql4);
 
 
-echo ("El idConsulta :". $IDconsulta. " se ha borrado con exito ! ");
 
 header("Location: ListadoConsultasAdmin.php ");
+mysqli_close($link);
 ?>

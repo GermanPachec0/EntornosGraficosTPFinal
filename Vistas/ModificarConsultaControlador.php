@@ -35,7 +35,7 @@ fechayhora = '$fechayhora', estado = '$estado', enlaceZoom = '$enlaceZoom', cupo
 WHERE  (idConsulta = '$IDconsulta') ;";
 
 mysqli_query($link, $sql1) or die(mysqli_error($link));
-mysqli_close($link);
-header ("Location: ListadoConsultasAdmin.php");
 
+header ("Location: ListadoConsultasAdmin.php");
+mysqli_close($link);
 ?>
