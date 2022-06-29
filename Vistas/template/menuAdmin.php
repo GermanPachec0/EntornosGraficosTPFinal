@@ -13,7 +13,7 @@
 </head>
 <body style="background-color: grey;">
 
-<?php $url ="http://".$_SERVER['HTTP_HOST']."/EntornosGraficosTPFinal" ?>
+<?php $url ="http://".$_SERVER['HTTP_HOST'] ?>
 
     <div class="container ">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark  nav-justified" >
