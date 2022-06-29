@@ -1,11 +1,28 @@
-<?php include ("template/menuAdmin.php");?>
+<?php 
+ include("usuario.php");
+  session_start();
+
+    if(isset($_SESSION['usuario']))
+    {
+     if($_SESSION['usuario'] -> getTipoUsuario() == "administrador")
+        {
+        include("template/menuAdmin.php");
+        }
+      else{
+        header("Location: AccesoDenegado.php");
+      }
+      
+    }else{
+      header("Location: AccesoDenegado.php");
+  }
+?>
 
 <div class="mt-4 p-5 bg-primary text-white rounded" style="text-align: center;">
             <h1>Alta Usuarios</h1>
             <p></p>
           </div><br>
 
-    <form action="<?php echo $url?> AltaUsuarioControlador.php" method="POST">
+    <form action="AltaUsuarioControlador.php" method="POST">
             <div class="form-group" >
                 <label >Tipo De Usuario</label>
                 <select class="form-select" aria-label="Default select example" name="tipoUsuario">
@@ -17,28 +34,28 @@
             </div>
             <div class="form-group">
                 <label >Legajo</label>
-                <input type="text" class="form-control" name="legajo" >
+                <input type="text" class="form-control" name="legajo" required>
             </div>
             
 
             <div class="form-group">
                 <label for="email">Email </label>
-                <input type="email" class="form-control" name="email">
+                <input type="email" class="form-control" name="email" required>
             </div>
 
             <div class="form-group">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" name="contraseña" >
+                <input type="password" class="form-control" name="contraseña" required>
             </div>
             
             <div class="form-group">
                 <label >Nombre</label>
-                <input type="text" class="form-control" name="nombre">
+                <input type="text" class="form-control" name="nombre" required>
             </div>
             
             <div class="form-group">
                 <label >Apellido</label>
-                <input type="text" class="form-control" name="apellido" >
+                <input type="text" class="form-control" name="apellido"  required>
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Aceptar</button>

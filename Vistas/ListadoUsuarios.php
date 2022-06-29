@@ -1,4 +1,23 @@
-<?php include 'template/menuAdmin.php'; ?>
+<?php 
+ include("usuario.php");
+  session_start();
+
+    if(isset($_SESSION['usuario']))
+    {
+     if($_SESSION['usuario'] -> getTipoUsuario() == "administrador")
+        {
+        include("template/menuAdmin.php");
+        }
+      else{
+        header("Location: AccesoDenegado.php");
+      }
+      
+    }else{
+      header("Location: AccesoDenegado.php");
+  }
+?>
+
+
 <?php include ("conexion.php");?>
 
 
@@ -27,9 +46,6 @@
             $sql3 = "SELECT * FROM administrador ";
             $resultado3 = mysqli_query($link, $sql3);
             $total_registros = mysqli_num_rows($resultado3);
-
-        
-
 
             ?>
           </div>  

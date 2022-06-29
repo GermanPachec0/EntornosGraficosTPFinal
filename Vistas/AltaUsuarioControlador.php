@@ -29,7 +29,7 @@ else if
     
         mysqli_query( $link, $sql) or die (mysqli_error($link));
 }
-echo (" El ". $tipoUsuario. " se dio de alta con exito !");
+header("Location: ListadoUsuarios.php");
 
 
 mysqli_close($link);

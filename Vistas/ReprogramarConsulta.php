@@ -1,28 +1,22 @@
 <?php 
-  include("./usuario.php");
-  session_start();
-  if(isset($_SESSION['usuario']))
-  {
-      $myUser= new Usuario();
-      $myUser = $_SESSION['usuario'];
-    if($myUser -> getTipoUsuario() == "administrador")
-    {
-      include("template/menuAdmin.php");
-    }
-    else if ($myUser -> getTipoUsuario() == "docente")
-    {
-    include("template/menuDocente.php");
-    }
-    else if ($myUser -> getTipoUsuario() == "alumno")
-    {
-    include("template/menuAlumno.php");
-    }
-  } 
-  else{
-    include("template/menuVisitante.php");
-  }
+   include("usuario.php");
+   session_start();
+ 
+     if(isset($_SESSION['usuario']))
+     {
+      if($_SESSION['usuario'] -> getTipoUsuario() == "docente")
+         {
+         include("template/menuDocente.php");
+         }
+       else{
+         header("Location: AccesoDenegado.php");
+       }
+       
+     }else{
+       header("Location: AccesoDenegado.php");
+   }
+ ?>
 
-?>
 
 
           </nav>
