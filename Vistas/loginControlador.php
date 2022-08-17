@@ -20,9 +20,6 @@
      
         validarUsuario($tipousuario);
     }
-
-
-
     function validarUsuario($table)
     {
         session_start();
