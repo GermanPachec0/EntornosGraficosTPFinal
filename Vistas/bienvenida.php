@@ -25,7 +25,7 @@
 
 <div class="mt-4 p-5 bg-success text-white rounded text-center">
             <h1>Bienvenido  <?php echo $myUser -> getNombre(); ?></h1>
-            <h2> Usted se está registrado como: <?php echo $myUser -> getTipoUsuario(); ?></h2>
+            <h2> Usted esta registrado como: <?php echo $myUser -> getTipoUsuario(); ?></h2>
            
     
 </div>
