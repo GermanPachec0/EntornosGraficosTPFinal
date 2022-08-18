@@ -98,8 +98,8 @@ function getDocente(){
             
             <div class="form-group" >
                 <label >Estado</label>
-                <select class="form-select" aria-label="Default select example" name="estado" required>
-                        <option selected>estado</option>
+                <select class="form-select" aria-label="Default select example" name="estado"  required>
+                      
                         <option value="disponible" >Disponible</option>
                         <option value="bloqueado" >Bloqueado</option>
                         

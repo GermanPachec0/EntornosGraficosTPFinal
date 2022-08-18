@@ -30,6 +30,8 @@ $estado = $_POST['estado'];
 $enlaceZoom = $_POST['enlaceZoom'];
 $cupo = $_POST['cupo'];
 
+
+
 $sql1 = "UPDATE consulta SET legajoDocente ='$idDocente' , idMateria = '$idMateria', 
 fechayhora = '$fechayhora', estado = '$estado', enlaceZoom = '$enlaceZoom', cupo = '$cupo'
 WHERE  (idConsulta = '$IDconsulta') ;";
@@ -38,4 +40,6 @@ mysqli_query($link, $sql1) or die(mysqli_error($link));
 
 header ("Location: ListadoConsultasAdmin.php");
 mysqli_close($link);
+
+
 ?>

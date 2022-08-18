@@ -108,22 +108,22 @@ function getDocente(){
     </div>
             <div class="form-group">
                 
-                <input type="text" class="form-control" name="idMateria" value="<?php echo($idMateria);?>" hidden>
+                <input type="number" class="form-control" name="idMateria" value="<?php echo($idMateria);?>" hidden>
             </div>
 
             <div class="form-group">
                 
-                <input type="text" class="form-control" name="idDocente" value="<?php echo($idDocente);?>" hidden>
+                <input type="number" class="form-control" name="idDocente" value="<?php echo($idDocente);?>" hidden>
             </div>
 
             <div class="form-group">
                 
-                <input type="text" class="form-control" name="IDconsulta" value="<?php echo($IDconsulta);?>" hidden>
+                <input type="number" class="form-control" name="IDconsulta" value="<?php echo($IDconsulta);?>" hidden>
             </div>
 
             <div class="form-group">
                 <label>Fecha y hora</label>
-                <input type="datetime" class="form-control" name="fechayhora" value="<?php echo($fechayhora);?>">
+                <input type="datetime-local" class="form-control" name="fechayhora" value="<?php echo($fechayhora);?>">
             </div>
             
             
@@ -145,7 +145,7 @@ function getDocente(){
 
             <div class="form-group">
                 <label for=>Cupo</label>
-                <input type="text" class="form-control" name="cupo" value="<?php echo($cupo);?>">
+                <input type="number" class="form-control" name="cupo" value="<?php echo($cupo);?>">
             </div>
 
 
