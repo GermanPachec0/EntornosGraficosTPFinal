@@ -63,4 +63,23 @@
 
 
     }
+
+    function validar($legajo, $contrasena){
+        $band = true;
+
+        if(!isset ($legajo)){
+            $band = false;
+        }
+        else if (preg_match("{5}", $legajo)== 0){
+            $band = false;
+        }
+        if(!isset($contrasena)){
+            $band = false;
+        }
+        else if (preg_match("/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/", $contrasena)== 0){
+            $band = false;
+        }
+
+        return $band;
+    }
 ?>

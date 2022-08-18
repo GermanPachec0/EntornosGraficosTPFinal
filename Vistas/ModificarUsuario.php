@@ -36,7 +36,7 @@ $tipoUsuario = $_POST['tipoUsuario'];?>
             </div>
             <div class="form-group">
                 <label>Legajo</label>
-                <input type="text onlyread" class="form-control" name="legajo" value="<?php echo($legajo);?>" readonly required>
+                <input type="text onlyread" class="form-control" name="legajo" pattern="{5}" value="<?php echo($legajo);?>" readonly required>
             </div>
           
 
@@ -47,7 +47,7 @@ $tipoUsuario = $_POST['tipoUsuario'];?>
 
             <div class="form-group">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" name="contraseña" value="<?php echo $_POST['contrasena'];?>"required>
+                <input type="password" class="form-control" name="contraseña" pattern ="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" value="<?php echo $_POST['contrasena'];?>"required>
             </div>
             
             <div class="form-group">

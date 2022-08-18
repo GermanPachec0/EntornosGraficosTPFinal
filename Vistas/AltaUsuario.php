@@ -34,18 +34,20 @@
             </div>
             <div class="form-group">
                 <label >Legajo</label>
-                <input type="text" class="form-control" name="legajo" required>
+                <input type="number" class="form-control" name="legajo" pattern="{5}"required>
             </div>
             
 
             <div class="form-group">
                 <label for="email">Email </label>
-                <input type="email" class="form-control" name="email" required>
+                <input type="email" class="form-control" name="email"required>
             </div>
 
             <div class="form-group">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" name="contraseña" required>
+                <input type="password" class="form-control" name="contraseña" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"required>
+                <label color="grey"> La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+NO puede tener otros símbolos.</label>
             </div>
             
             <div class="form-group">
