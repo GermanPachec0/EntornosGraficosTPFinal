@@ -24,9 +24,11 @@
             </div>
             
             <li class="nav-item"><a class="nav-link" href="<?php echo $url?>/Vistas/Informacion.php">Informacion</a></li>
+            <li class="nav-item"><a class="nav-link" href="<?php echo $url?>/Vistas/CambiarContrasenia.php">Cambiar Contraseña</a></li>
             <li class="nav-item"><a class="nav-link" href="<?php echo $url?>/Vistas/ConsultasDocentes.php">Mis Consultas</a></li>
             <li class="nav-item"><a onclick="confirm('¿Desea Cerrar Sesión?')" class="nav-link" href="<?php echo $url?>/Vistas/cerrarsesion.php">Cerrar Sesion</a></li>
-        
+            
+
           </nav>
           
           
