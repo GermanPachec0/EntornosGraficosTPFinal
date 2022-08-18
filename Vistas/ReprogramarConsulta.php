@@ -35,15 +35,16 @@
                 <input type="text" name="motivo" class="form-control" aria-describedby="emailHelp" required>
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Fecha</label>
-                <input type="datetime-local" name="fecha" class="form-control"  aria-describedby="emailHelp" required>
+            <label for="fecha"> Fecha consulta alternativa:</label><br>
+            <input type="Datetime-local" min="<?php echo substr(date('c'), 0 , 19) ?>" name="fecha" id="start" class="form-control" />
+              
             </div>
         
             <br>
             <input type="submit" class="btn btn-primary col-3" value="Aceptar">
             <a class="btn btn-danger" href="ConsultasDocentes.php">Cancelar</a>
     </form>
-            
+            <br>
          
              <?php include("footer.php") ?>
 </html> 
