@@ -44,4 +44,4 @@
            
     </form>
 <br>
-<?php include("Vistas/VistasGeneral/footer.php") ?>
+<?php include("footer.php") ?>

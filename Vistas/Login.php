@@ -59,4 +59,4 @@
     </form>
 </div>
 <br>
-<?php include("template/footer.php") ?>
+<?php include("footer.php") ?>
