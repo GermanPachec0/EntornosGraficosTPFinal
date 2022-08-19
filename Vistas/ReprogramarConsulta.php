@@ -27,7 +27,8 @@
 
   
  <?php 
-
+     $fecha = $_POST ['fecha'];
+     $idConsulta = $_POST['idConsulta'];
   ?>
       <form action="reprogramarConsultaControlador.php" method="POST">
             <div class="form-group">
@@ -36,15 +37,15 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Fecha</label>
-                <input type="datetime-local" name="fecha" class="form-control"  aria-describedby="emailHelp" required>
+                <input type="datetime-local" name="fecha" class="form-control" value="<?php echo $fecha ?>" required>
             </div>
+            <input name="idConsulta" value="<?php echo $idConsulta ?>" hidden>
         
             <br>
             <input type="submit" class="btn btn-primary col-3" value="Aceptar">
             <a class="btn btn-danger" href="ConsultasDocentes.php">Cancelar</a>
     </form>
-            
-         
+    <br>
              <?php include("footer.php") ?>
 </html> 
    

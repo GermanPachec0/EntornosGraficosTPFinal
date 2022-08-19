@@ -1,11 +1,11 @@
 <?php 
           
     include('conexion.php'); 
-    $idConsulta =  $_COOKIE['consulta'];
+    $idConsulta = $_POST['idConsulta'];
     $motivo = $_POST['motivo'];
     $fecha = $_POST ['fecha'];
-    echo $fecha;
-    $vSql = "UPDATE consulta SET fechayhoraAlt = '$fecha', motivoBloqueo = '$motivo' WHERE idConsulta = '$idConsulta'";
+
+    $vSql = "UPDATE consulta SET fechayhoraAlt = '$fecha', motivoBloqueo = '$motivo', estado = 'bloqueado'  WHERE idConsulta = '$idConsulta'";
     mysqli_query($link,$vSql)  or die (mysqli_error($link));
     NotificarAlumno($idConsulta);
 

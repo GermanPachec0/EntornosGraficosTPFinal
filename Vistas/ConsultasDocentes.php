@@ -88,9 +88,10 @@ function getMisConsultas()
                   <td><?php echo $fila[8]?></td>
                   <td><?php echo $fila[9]?></td>
                   <td><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo<?php echo $index ?>">Alumnos Inscriptos</button></td>
-                  <form action="profesorControlador.php" method="POST">
+                  <form action="ReprogramarConsulta.php" method="POST">
                   <input name="id" value="<?php echo $fila['10']?>" hidden>
                   <input name="idConsulta" value="<?php echo $fila['0']?>" hidden>
+                  <input name="fecha" value="<?php echo $fila['4']?>" hidden>
                   <td><input type="submit" class="btn btn-danger" value="Bloquear Consulta"></td>
                   </form>
                    
