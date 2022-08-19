@@ -72,18 +72,26 @@ function getConsultas(){
             <h1>Lista de Consultas</h1>
           </div><br>
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="POST">
-          <div class="input-group mb-3">
-            
-            <input type="submit" class="btn btn-primary col-3" name="buscabloqueado" value="Buscar consultas bloqueadas">
-            <input type="submit" class="btn btn-primary col-3" name="buscatodos" value="Listar todas las consultas">
+            <div class="input-group mb-3">
+            <input type="submit" class="btn btn-primary col-2" name="buscabloqueado" value="Buscar consultas bloqueadas">
          
-            <div class="col-2"></div>
+            <input type="submit" class="btn btn-light col-2" name="buscatodos" value="Listar todas las consultas">
+            </form>
+            <div class="col-1">
+            </div>
+
+            <form action="CargaConsultasCSV.php" method="POST" enctype = "multipart/form-data">
+            <input type="file" name="excel" type="file" class="btn btn-primary " value="Cargar">
+            <input type="submit"  type="button" class="btn btn-primary" value="Aceptar">
             </form>
 
-            <form action="Agregar_consulta.php" method="POST">
-            <input type="submit"  type="button" class="btn btn-primary" value="Agregar Consulta">
+            <div class="col-1">
+            </div>
             </form>
-          </div>  
+            <form action="Agregar_consulta.php" method="POST">
+            <input type="submit"  type="button" class="btn btn-primary" value="Agregar una Consulta">
+            </form>
+            </div>  
           
         
 
@@ -168,7 +176,7 @@ function getConsultas(){
         
             </tbody>
           </table>
-          <?php include("template/footer.php") ?>
+          <?php include("footer.php") ?>
     
 </body>
 </html>
