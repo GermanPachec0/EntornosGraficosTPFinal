@@ -168,7 +168,7 @@ function getConsultas(){
         
             </tbody>
           </table>
-          <?php include("template/footer.php") ?>
+          <?php include("footer.php") ?>
     
 </body>
 </html>

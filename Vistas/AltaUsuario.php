@@ -62,4 +62,4 @@
             <a class="btn btn-danger" href="ListadoUsuarios.php">Cancelar</a>
     </form>
 <br>
-<?php include("template/footer.php") ?>
+<?php include("footer.php") ?>
