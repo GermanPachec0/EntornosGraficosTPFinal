@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
             <label for="fecha"> Fecha consulta alternativa:</label><br>
-            <input type="Datetime-local" min="<?php echo substr(date('c'), 0 , 19) ?>" name="fecha" id="start" class="form-control" value="<?php echo $fecha ?>"  />
+            <input type="Datetime-local" min="<?php echo $fecha ?>" name="fecha" id="start" class="form-control" value="<?php echo $fecha ?>"  />
               
 
             </div>
