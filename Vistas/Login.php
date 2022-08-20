@@ -46,7 +46,13 @@
                 </select>
             </div>
             <div class="form-floating mb-3">
+<<<<<<< HEAD
                 <input type="text" class="form-control" id="floatingInput" placeholder="Legajo" name="legajo"  pattern="{5}"  required>
+=======
+
+                <input type="text" class="form-control" id="floatingInput" placeholder="Legajo" name="legajo" pattern="[0-9]{5}" required>
+
+>>>>>>> d832266d5f7c65f79ea0c246633c743af53d036d
                 <label for="floatingInput">Legajo</label>
             </div>
             <div class="form-floating">
