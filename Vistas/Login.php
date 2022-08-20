@@ -46,7 +46,7 @@
                 </select>
             </div>
             <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="floatingInput" placeholder="Legajo" name="legajo" pattern = "{1,5}" max= 5  required>
+                <input type="number" class="form-control" id="floatingInput" placeholder="Legajo" name="legajo" max= 5  required>
                 <label for="floatingInput">Legajo</label>
             </div>
             <div class="form-floating">
