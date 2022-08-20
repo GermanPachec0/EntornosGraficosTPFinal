@@ -36,14 +36,10 @@
                 <input type="text" name="motivo" class="form-control" aria-describedby="emailHelp" required>
             </div>
             <div class="form-group">
-<<<<<<< HEAD
             <label for="fecha"> Fecha consulta alternativa:</label><br>
-            <input type="Datetime-local" min="<?php echo substr(date('c'), 0 , 19) ?>" name="fecha" id="start" class="form-control" />
+            <input type="Datetime-local" min="<?php echo substr(date('c'), 0 , 19) ?>" name="fecha" id="start" class="form-control" value="<?php echo $fecha ?>"  />
               
-=======
-                <label for="exampleInputEmail1">Fecha</label>
-                <input type="datetime-local" name="fecha" class="form-control" value="<?php echo $fecha ?>" required>
->>>>>>> 5ece919a6e053bdb42dae50f162fb17dfe3f7589
+
             </div>
             <input name="idConsulta" value="<?php echo $idConsulta ?>" hidden>
         
@@ -51,12 +47,10 @@
             <input type="submit" class="btn btn-primary col-3" value="Aceptar">
             <a class="btn btn-danger" href="ConsultasDocentes.php">Cancelar</a>
     </form>
-<<<<<<< HEAD
+
             <br>
          
-=======
     <br>
->>>>>>> 5ece919a6e053bdb42dae50f162fb17dfe3f7589
              <?php include("footer.php") ?>
 </html> 
    
