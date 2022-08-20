@@ -30,4 +30,5 @@ function ActualizarContrasenia($leg,$passNueva)
     mysqli_query( $link, $sql) or die (mysqli_error($link));
 }
 
+$_POST['passNueva'] = null;
 ?>
