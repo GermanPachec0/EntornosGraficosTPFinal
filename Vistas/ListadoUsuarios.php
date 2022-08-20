@@ -18,19 +18,64 @@
 ?>
 
 
-<?php include ("conexion.php");?>
 
+<?php 
+  include("conexion.php");
+  $myResults = null;
+  if(!isset($_POST['submit']))
+  {
+    if(isset($_POST['legajo']))
+    {
+    $myResults =  buscarPorLegajo($_POST['legajo']);
+    $total_registros = mysqli_num_rows($myResults);
+  
+  
+
+    }
+  }
+    
+  function buscarPorLegajo($legajo)
+  { 
+     
+      include ("conexion.php");
+      $vSql = "SELECT * FROM 
+      alumno
+      where legajo like '%".$legajo."%'
+      union all 
+      SELECT * FROM 
+      docente
+      where legajo like '%".$legajo."%'
+      union all 
+      SELECT * FROM 
+      administrador
+      where legajo like '%".$legajo."%'; ";
+
+      $vResultado= mysqli_query($link,$vSql)  or die (mysqli_error($link));;
+   
+      return $vResultado;
+  }
+
+
+
+
+
+?>
 
     <div class="mt-4 p-5 bg-primary text-white rounded " style="text-align: center;">
             <h1>Listado De Usuarios</h1>
           </div><br>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Ingresar Datos a buscar">
-            <button class="btn btn-primary col-3" type="button">Buscar</button>
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="POST">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="legajo" placeholder="Ingresar Legajo a buscar">
+            <input type="submit" class="btn btn-primary col-3" value="Buscar">
+            <div class="col-2"></div>
+          </div>  
+          </form>
             <div class="col-2"></div>
             <form action="AltaUsuario.php" method="POST">
-            <input type="submit"  type="button" class="btn btn-primary" value="Agregar Usuario">
+            <input type="submit"  type="button" class="btn btn-primary "  value="Agregar Usuario">
             </form>
 
             <?php
@@ -64,7 +109,11 @@
                 </tr>
                 </thead>
                 <?php
-                while ($fila = mysqli_fetch_array($resultado)){
+                if ($myResults != null){
+                  $resultado = $myResults;
+
+                }
+                while  ($fila = mysqli_fetch_array($resultado)){
                   ?>
                 <tbody>
                 <tr>
@@ -104,6 +153,10 @@
                 
 <?php
                 }
+                if ($myResults != null){
+                  $resultado2 = $myResults;
+
+                }
                 while ($fila = mysqli_fetch_array($resultado2)){
                   ?>
                 <tbody>
@@ -142,6 +195,10 @@
                 </tbody>
                 
 <?php
+                }
+                if ($myResults != null){
+                  $resultado3 = $myResults;
+
                 }
                 while ($fila = mysqli_fetch_array($resultado3)){
                   ?>
