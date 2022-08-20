@@ -39,9 +39,9 @@
                  <h1>Información de uso del sitio</h1>
                 "Si usted necesita una cuenta para acceder a una consulta, vaya a la ssección de información y contactese vía email con un personal administrativo de la facultad."
                  "En caso de olvidar la contraseña, contactarse con la facultad"
-                 Información de uso del sitio.
-                 "Si usted necesita una cuenta para acceder a una consulta, vaya a la ssección de información y contactese vía email con un personal administrativo de la facultad."
-                 "En caso de olvidar la contraseña, contactarse con la facultad"
+                 <br>
+                 <br>
+                 <br>
             </p>
           </div>
           <br>
