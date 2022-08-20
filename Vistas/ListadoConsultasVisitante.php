@@ -52,7 +52,7 @@
       on m.idMateria = c.idMateria
       inner join docente d
       on d.legajo = c.legajoDocente
-      where m.nombre LIKE '%".$materia."%';";
+      where m.nombre LIKE c;";
       $vResultado= mysqli_query($link,$vSql)  or die (mysqli_error($link));;
    
       return $vResultado;
