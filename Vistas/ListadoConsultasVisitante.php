@@ -52,7 +52,7 @@
       on m.idMateria = c.idMateria
       inner join docente d
       on d.legajo = c.legajoDocente
-      where m.nombre LIKE c;";
+      where m.nombre LIKE '%".$materia."%';";
       $vResultado= mysqli_query($link,$vSql)  or die (mysqli_error($link));;
    
       return $vResultado;
@@ -108,7 +108,7 @@
                       <input name="cupo" value="<?php echo $fila['8']?>" hidden>
                       <input name="legajoDoc" value="<?php echo $fila['9']?>" hidden>
                       <input name="idMateria" value="<?php echo $fila['10']?>" hidden>
-                      <td><input type="submit" class="btn btn-success" value="Inscribirse" onclick="confirm('¿Desea Inscribirse?')"></td>
+                      <td><input type="submit" class="btn btn-success" value="Inscribirse" ></td>
                   </form>
                 </tr>
                 <?php 

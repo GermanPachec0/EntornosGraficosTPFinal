@@ -80,6 +80,8 @@ $myUser= new Usuario();
 
     function notificarDocente($legD)
     {
+        
+        include ("usuario.php");
         include('conexion.php'); 
         $legajoalu = $myUser->getLegajo();
         $nombreyap = $myUser->getNombre()."". $myUser->getApellido();
