@@ -13,7 +13,7 @@ if(($myUser -> getContrasenia()) === $_POST['passAnt'] )
         $legajo = $myUser -> getLegajo();
         ActualizarContrasenia($legajo,$passNueva);
         header("Location: cambioContraseniaExitoso.php");  
-        $myUser -> setContrasenia($passNueva);
+        $_SESSION['usuario'] -> setContrasenia($passNueva);
         
     }
     else {
