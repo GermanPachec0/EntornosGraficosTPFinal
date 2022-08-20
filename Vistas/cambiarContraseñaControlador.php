@@ -13,6 +13,9 @@ if(($myUser -> getContrasenia()) === $_POST['passAnt'] )
         $legajo = $myUser -> getLegajo();
         ActualizarContrasenia($legajo,$passNueva);
         header("Location: cambioContraseniaExitoso.php");  
+        $_POST['passNueva'] = null;
+        $_POST['passAnt'] = null;
+        $passNueva = null;
         
     }
     else {
@@ -30,5 +33,5 @@ function ActualizarContrasenia($leg,$passNueva)
     mysqli_query( $link, $sql) or die (mysqli_error($link));
 }
 
-$_POST['passNueva'] = null;
+
 ?>
