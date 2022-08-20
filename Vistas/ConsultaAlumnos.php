@@ -67,7 +67,7 @@
                   <form action="alumnoControlador.php" method="POST">
                   <input name="id" value="<?php echo $fila['10']?>" hidden>
                   <input name="idConsulta" value="<?php echo $fila['0']?>" hidden>
-                  <td><input type="submit" class="btn btn-danger" value="Anular Inscripción" onclick="confirm('¿Desea Anular Inscripcion?')"></td>
+                  <td><input type="submit" class="btn btn-danger" value="Anular Inscripción" ></td>
                   </form>
                 </tr>
                 <?php 
