@@ -3,6 +3,7 @@ include ("usuario.php");
 session_start();
 
 $myUser= new Usuario();
+
         if(isset($_SESSION['usuario']))
         {
         $myUser = $_SESSION['usuario']; 
@@ -41,6 +42,8 @@ $myUser= new Usuario();
             header("Location: errorInscripcion.php");
             
         }
+
+
         //DESCONTAR CUPO DE LA CONSULTA
     function actualizarCupo($idConsulta)
     {
