@@ -9,6 +9,8 @@ $contrasena = $_POST['contraseña'];
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 
+if($_SESSION['usuario'] -> getTipoUsuario() == "administrador"){
+
 if (validar($legajo, $email, $contrasena, $nombre, $apellido)){
 
 
@@ -87,7 +89,10 @@ function validar ($legajo, $email, $contrasena, $nombre, $apellido){
     
  return $band;
 }
-
+}
+else {
+    header("Location: AccesoDenegado.php");
+}
 ?>
 
 
