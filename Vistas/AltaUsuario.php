@@ -25,7 +25,7 @@
     <form action="AltaUsuarioControlador.php" method="POST">
             <div class="form-group" >
                 <label >Tipo De Usuario</label>
-                <select class="form-select" aria-label="Default select example" name="tipoUsuario">
+                <select class="form-select" aria-label="Default select example" name="tipoUsuario" required>
                         <option selected>Tipo de Usuario</option>
                         <option value="administrador" >Administrador</option>
                         <option value="alumno" >Alumno</option>
@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
                 <label >Legajo</label>
-                <input type="number" class="form-control" name="legajo" pattern="{5}"required>
+                <input type="text" class="form-control" name="legajo" pattern="[0-9]{5}"required>
             </div>
             
 

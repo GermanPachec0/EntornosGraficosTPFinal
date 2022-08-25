@@ -34,9 +34,9 @@ else if
 header("Location: ListadoUsuarios.php");
 
 
-mysqli_close($link); }
+mysqli_close($link); 
 
-else {
+}else {
     header ("Location: errorValidacion.php");
 }
 

@@ -76,13 +76,14 @@ $myUser= new Usuario();
         $vSql = "INSERT INTO inscripcion (idConsulta,legajoAlumno,legajoDocente,idMateria) VALUES ('$idConsulta', '$legajoAlumno', '$legajoDoc', '$idMateria');";
         mysqli_query($link,$vSql)  or die (mysqli_error($link));
         //Notificar al docente inscripcion de alumno
-        notificarDocente($legajoDoc);
+        notificarDocente($legajoDoc,$idMateria);
     }
 
-    function notificarDocente($legD)
+    function notificarDocente($legD,$idMateria)
     {
         $myUser = $_SESSION['usuario']; 
         include('conexion.php'); 
+
         $legajoalu = $myUser->getLegajo();
         $nombreyap = $myUser->getNombre()."". $myUser->getApellido();
 
@@ -90,8 +91,14 @@ $myUser= new Usuario();
         from docente d
         where d.legajo = '$legD';";
         $vResultado= mysqli_query($link,$vSql)  or die (mysqli_error($link));
+        
+        $vSql= "SELECT nombre FROM materia 
+        where idMateria = $idMateria;";
+        $vResultado2= mysqli_query($link,$vSql)  or die (mysqli_error($link));
+        $fila = mysqli_fetch_array($vResultado2);
+
         $asunto = "Nuevo Inscripto !";
-        $message = "El Alumno '$nombreyap'.'$legajoalu ' se ha inscripto a tu consulta";
+        $message = "El Alumno '$nombreyap'.'Legajo: $legajoalu ' se ha inscripto a tu consulta de: '$fila[0]'";
         while($fila = mysqli_fetch_array($vResultado))
         {
 

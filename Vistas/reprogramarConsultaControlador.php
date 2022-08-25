@@ -13,14 +13,17 @@
     function NotificarAlumno($idC)
     {
         include('conexion.php'); 
-        $vSql= "SELECT a.email, a.nombre,a.apellido FROM inscripcion i
+        $vSql= "SELECT a.email, a.nombre,a.apellido, m.nombre FROM inscripcion i
         INNER JOIN alumno a
+        on i.legajoAlumno = a.legajo
+        INNER JOIN materia m
+        on m.idMateria = i.idMateria
         WHERE idConsulta = '$idC';";
         $vResultado= mysqli_query($link,$vSql)  or die (mysqli_error($link));
         $asunto = "Consulta Reprogramada";
         while($fila = mysqli_fetch_array($vResultado))
         {
-            $message= "Estimado: ". $fila[1]." ".$fila[2]." ". "Este mensaje es para avisarle que la fecha de su consulta fue reprogramada para el día: ". $fecha;
+            $message= "Estimado: ". $fila[1]." ".$fila[2]." ". "Este mensaje es para avisarle que la fecha de su consulta de '$fila[3]' fue reprogramada para el día: ". $fecha;
             mail($fila[0],$asunto,$message);
         }
             
