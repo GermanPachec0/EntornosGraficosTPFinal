@@ -3,6 +3,8 @@
     $email = $_POST['email'];
     $asunto = $_POST['asunto'];
     $consulta = $_POST['consulta'];
-    mail($email,$asunto,$consulta); 
-   
+    $emailTo ="jc527464@gmail.com";
+
+    mail($emailTo,$asunto,$consulta." Enviado por: '$email'"); 
+    header ("Location: Informacion.php");
 ?>

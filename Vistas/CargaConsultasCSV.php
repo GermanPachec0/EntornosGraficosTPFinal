@@ -6,10 +6,10 @@ require('conexion.php');
 if(isset($_FILES['excel']))
 {
 
-    $tipo       = $_FILES['excel']['type'];
-    $tamanio    = $_FILES['excel']['size'];
+    $tipo = $_FILES['excel']['type'];
+    $tamanio = $_FILES['excel']['size'];
     $archivotmp = $_FILES['excel']['tmp_name'];
-    $lineas     = file($archivotmp);
+    $lineas = file($archivotmp);
     $i = 0;
     foreach ($lineas as $linea) {
         $cantidad_registros = count($lineas);

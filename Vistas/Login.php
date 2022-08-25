@@ -1,5 +1,8 @@
 <?php 
+<<<<<<< HEAD
   
+=======
+>>>>>>> 34ef8f65a79a144d18bca1168ccfe1f75064c85e
   session_start();
   include("./usuario.php");
   if(isset($_SESSION['usuario']))
