@@ -1,10 +1,12 @@
 <?php 
-          
+    session_start();
     include('conexion.php'); 
     $idConsulta = $_POST['idConsulta'];
     $motivo = $_POST['motivo'];
     $fecha = $_POST ['fecha'];
 
+    if($_SESSION['usuario'] -> getTipoUsuario() == "docente")
+    {
     $vSql = "UPDATE consulta SET fechayhoraAlt = '$fecha', motivoBloqueo = '$motivo', estado = 'bloqueado'  WHERE idConsulta = '$idConsulta'";
     mysqli_query($link,$vSql)  or die (mysqli_error($link));
     NotificarAlumno($idConsulta);
@@ -28,6 +30,10 @@
         }
             
     }
+}else {
+    header("Location: AccesoDenegado.php.php");
+}
+  
 
                 header("Location: ConsultasDocentes.php");
                 

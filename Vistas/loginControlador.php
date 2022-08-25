@@ -49,8 +49,7 @@
 
             $_SESSION['usuario'] = $usuario;
             echo("Se encontro usuario".$usuario -> getNombre());
-            $url ="http://$_SERVER[HTTP_HOST]";
-          header("Location: '$url'/bienvenida.php");;
+          header("Location: bienvenida.php");;
         
         }else
         {
