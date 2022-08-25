@@ -49,7 +49,8 @@
 
             $_SESSION['usuario'] = $usuario;
             echo("Se encontro usuario".$usuario -> getNombre());
-        return   header("Location: bienvenida.php");;
+            $url ="http://$_SERVER[HTTP_HOST]";
+          header("Location: '$url'/bienvenida.php");;
         
         }else
         {
@@ -82,4 +83,5 @@
 
         return $band;
     }
+
 ?>
