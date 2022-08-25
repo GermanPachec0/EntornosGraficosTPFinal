@@ -1,10 +1,13 @@
 <?php
-include ("usuario.php");
+
 session_start();
+include ("usuario.php");
 $myUser= new Usuario();
 $myUser = $_SESSION['usuario']; 
 $passNueva = $_POST['passNueva'];
 $pattern = "/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/";
+
+if($_SESSION['usuario']-> getTipoUsuario() == "docente"){ 
 
 if(($myUser -> getContrasenia()) === $_POST['passAnt'] )
 {
@@ -34,6 +37,9 @@ function ActualizarContrasenia($leg,$passNueva)
     $resultado = mysqli_query($link, $sql);
     mysqli_query( $link, $sql) or die (mysqli_error($link));
 }
-
+}
+else {
+    header("Location: AccesoDenegado.php");
+}
 
 ?>

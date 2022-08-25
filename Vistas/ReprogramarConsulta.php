@@ -1,6 +1,7 @@
 <?php 
-   include("usuario.php");
+ 
    session_start();
+   include("usuario.php");
  
      if(isset($_SESSION['usuario']))
      {

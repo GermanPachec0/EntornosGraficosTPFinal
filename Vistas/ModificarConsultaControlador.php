@@ -39,10 +39,6 @@ WHERE  (idConsulta = '$IDconsulta') ;";
 mysqli_query($link, $sql1) or die(mysqli_error($link));
 
 header ("Location: ListadoConsultasAdmin.php");
-<<<<<<< HEAD
+
 mysqli_close($link);
 
-=======
->>>>>>> 5ece919a6e053bdb42dae50f162fb17dfe3f7589
-
-?>
