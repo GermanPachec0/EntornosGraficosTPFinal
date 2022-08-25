@@ -3,6 +3,8 @@
 session_start();
 include ("usuario.php");
 
+if($_SESSION['usuario']-> getTipoUsuario() == "alumno"){
+
 $myUser= new Usuario();
 
         if(isset($_SESSION['usuario']))
@@ -42,6 +44,9 @@ $myUser= new Usuario();
         else{
             header("Location: errorInscripcion.php");
             
+        }}
+        else{
+            header("Location : AccesoDenegado.php");
         }
 
 

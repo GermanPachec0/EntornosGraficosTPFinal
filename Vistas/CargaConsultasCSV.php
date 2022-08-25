@@ -2,6 +2,7 @@
 require('conexion.php');
 
 
+if($_SESSION['usuario']-> getTipoUsuario() == "administrador"){
 
 if(isset($_FILES['excel']))
 {
@@ -42,7 +43,11 @@ if(isset($_FILES['excel']))
 }
 else{
     header("Location: ListadoConsultasAdmin.php");
+} }
+else {
+    header("Location: AccesoDenegado.php");
 }
+
   
 function BuscarIDMateria($materia)
 {

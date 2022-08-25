@@ -8,6 +8,8 @@ $contrasena = $_POST['contraseña'];
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 
+if($_SESSION['usuario']-> getTipoUsuario() == "administrador"){
+
 if (validar($legajo, $email, $contrasena, $nombre, $apellido)) { 
 
 if ($tipoUsuario == "docente"){
@@ -39,7 +41,10 @@ mysqli_close($link);
 }else {
     header ("Location: errorValidacion.php");
 }
-
+}
+else {
+    header("Location : AccesoDenegado.php");
+}
 
 
 function validar ($legajo, $email, $contrasena, $nombre, $apellido){
@@ -81,7 +86,7 @@ function validar ($legajo, $email, $contrasena, $nombre, $apellido){
     }
     
 return $band;
-}
+} 
 
 
 

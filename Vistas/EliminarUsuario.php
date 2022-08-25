@@ -5,6 +5,8 @@ include ("conexion.php");
 $legajo = $_POST['legajo'];
 $tipoUsuario = $_POST['tipoUsuario'];
 
+if($_SESSION['usuario']-> getTipoUsuario() == "administrador"){
+
  $vsql = "SELECT * 
  from consulta c 
  where c.legajoDocente = '$legajo'";
@@ -33,7 +35,10 @@ else if ($tipoUsuario == 'administrador'){
     $resultado = mysqli_query($link, $sql);
     header("Location: ListadoUsuarios.php ");
 }
-
+}
+else{
+    header("Location: AccesoDenegado.php");
+}
 
 
 
