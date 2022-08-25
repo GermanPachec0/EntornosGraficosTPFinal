@@ -3,6 +3,8 @@
   session_start();
   include("usuario.php");
 
+  
+
     if(isset($_SESSION['usuario']))
     {
      if($_SESSION['usuario'] -> getTipoUsuario() == "administrador")
